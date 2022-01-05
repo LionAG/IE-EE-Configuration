@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows10.0.17763.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>config_gear_icon.ico</ApplicationIcon>
+    <PackageIcon>config_gear.png</PackageIcon>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="config_gear_icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\ConfigUtility\Assets\config_gear.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ConfigUtility\ConfigUtility.csproj" />
+  </ItemGroup>
+
+</Project>
