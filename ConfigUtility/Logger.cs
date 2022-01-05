@@ -30,7 +30,7 @@ namespace ConfigUtility
             string? ECName; // Name of the enumeration constant
 
             if ((ECName = Enum.GetName(logType.GetType(), logType)) != null)
-            { 
+            {
                 var TypeName = ECName.ToString().ToUpper();
 
                 if (IncludeTimestamp)

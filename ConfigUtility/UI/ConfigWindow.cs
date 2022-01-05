@@ -371,7 +371,7 @@ namespace ConfigUtility.UI
         {
             if (BaldurPropertyManager is not null && ProgramOptionsOne_Properties.TryGetValue(e.Index, out var S))
                 BaldurPropertyManager.SetBoolean(S, e.NewValue == CheckState.Checked);
-            
+
             UITools.ResetSelectedIndex((CheckedListBox)sender);
         }
 
@@ -445,7 +445,7 @@ namespace ConfigUtility.UI
 
         private void CheckToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(ConfigBackupManager.BackupExists)
+            if (ConfigBackupManager.BackupExists)
             {
                 var CT = File.GetCreationTime(ConfigBackupManager.BackupFilePath);
                 Msg.Information($"Backup file for {ShortGameName} exists!\n\nCreated at: {CT}", "Backup Status");
@@ -488,7 +488,7 @@ namespace ConfigUtility.UI
 
         private void WriteOptimalConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(BaldurPropertyManager == null)
+            if (BaldurPropertyManager == null)
             {
                 Msg.Error("Cannot access game configuration properties.");
                 return;
@@ -508,7 +508,7 @@ namespace ConfigUtility.UI
                 BaldurPropertyManager.SetBoolean("Game Options,Show Date On Pause", true);
                 BaldurPropertyManager.SetBoolean("Game Options,Enhanced Path Search", true);
                 BaldurPropertyManager.SetBoolean("Program Options,Disable Cosmetic Attacks", true);
-                
+
                 this.UpdateUI();
 
                 Msg.ToastInformation("Optimal configuration written!");

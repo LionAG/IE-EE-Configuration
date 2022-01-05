@@ -29,13 +29,13 @@ namespace ConfigUtility.UI
         {
             new ToastContentBuilder().AddCustomTimeStamp(DateTime.Now)
                                      .AddText(msg)
-                                     .Show(t => 
+                                     .Show(t =>
                                      {
                                          Random r = new();
 
                                          t.Tag = r.NextInt64().ToString();
                                          t.Dismissed += Dismissed;
-                                         t.ExpirationTime = DateTime.Now.AddSeconds(ExpirationSec); 
+                                         t.ExpirationTime = DateTime.Now.AddSeconds(ExpirationSec);
                                      });
         }
 

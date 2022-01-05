@@ -35,7 +35,7 @@
                     var ConfigContent = new List<string>(File.ReadAllLines(LuaFilePath));
                     var Line = ConfigContent.Find(l => l.Contains(PropertyName));
 
-                    if(Line is null)
+                    if (Line is null)
                     {
                         ConfigContent.Insert(ConfigContent.Count, CreateEntry(Section, PropertyName, Value));
                     }
