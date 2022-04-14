@@ -1,6 +1,5 @@
-using ConfigUtility;
-using ConfigUtility.UI;
 using ConfigUtility.Components;
+using ConfigUtility.UI;
 
 namespace IWDEEConfig
 {
