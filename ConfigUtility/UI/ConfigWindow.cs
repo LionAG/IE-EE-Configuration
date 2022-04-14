@@ -1,3 +1,5 @@
+using ConfigUtility.Components;
+
 namespace ConfigUtility.UI
 {
     public delegate void GameFoundHandler(string ShortGameName, string LongGameName);

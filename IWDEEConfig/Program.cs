@@ -1,5 +1,6 @@
 using ConfigUtility;
 using ConfigUtility.UI;
+using ConfigUtility.Components;
 
 namespace IWDEEConfig
 {
@@ -15,7 +16,7 @@ namespace IWDEEConfig
         {
             ApplicationConfiguration.Initialize();
 
-            if (Tools.IsProcessRunning(GameProcessName))
+            if (ProcessTools.IsProcessRunning(GameProcessName))
             {
                 Msg.Error("Please close Icewind Dale while using the configuration utility.");
                 return;

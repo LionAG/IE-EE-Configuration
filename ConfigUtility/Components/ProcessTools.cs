@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 
-namespace ConfigUtility
+namespace ConfigUtility.Components
 {
-    public class Tools
+    public class ProcessTools
     {
         public static bool IsProcessRunning(string ProcessName)
         {

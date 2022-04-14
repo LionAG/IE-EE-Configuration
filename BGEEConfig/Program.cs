@@ -1,5 +1,6 @@
 using ConfigUtility;
 using ConfigUtility.UI;
+using ConfigUtility.Components;
 
 namespace BGIEEConfig
 {
@@ -15,7 +16,7 @@ namespace BGIEEConfig
         {
             ApplicationConfiguration.Initialize();
 
-            if (Tools.IsProcessRunning(GameProcessName))
+            if (ProcessTools.IsProcessRunning(GameProcessName))
             {
                 Msg.Error("Please close Baldur's Gate while using the configuration utility.");
                 return;

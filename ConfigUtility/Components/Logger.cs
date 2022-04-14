@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace ConfigUtility
+namespace ConfigUtility.Components
 {
     public enum LogType
     {

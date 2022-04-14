@@ -1,4 +1,4 @@
-﻿namespace ConfigUtility
+﻿namespace ConfigUtility.Components
 {
     public class BaldurPropertyManager
     {
