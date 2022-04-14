@@ -516,5 +516,10 @@ namespace ConfigUtility.UI
                 Msg.ToastInformation("Optimal configuration written!");
             }
         }
+
+        private void ExtendedConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AdditionalOptions(this.BaldurPropertyManager).ShowDialog();
+        }
     }
 }

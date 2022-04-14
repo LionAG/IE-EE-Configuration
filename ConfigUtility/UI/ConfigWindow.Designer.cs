@@ -491,6 +491,7 @@
             this.extendedConfigurationToolStripMenuItem.Name = "extendedConfigurationToolStripMenuItem";
             this.extendedConfigurationToolStripMenuItem.Size = new System.Drawing.Size(339, 34);
             this.extendedConfigurationToolStripMenuItem.Text = "Additional Options";
+            this.extendedConfigurationToolStripMenuItem.Click += new System.EventHandler(this.ExtendedConfigurationToolStripMenuItem_Click);
             // 
             // writeOptimalConfigurationToolStripMenuItem
             // 
