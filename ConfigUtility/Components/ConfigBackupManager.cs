@@ -45,7 +45,7 @@
                     SaveLocation = BackupFilePath;
                 }
 
-                if (File.Exists(SaveLocation) == false)
+                if (File.Exists(LuaConfigFilePath))
                     File.Copy(LuaConfigFilePath, SaveLocation, Overwrite);
 
                 return true;
