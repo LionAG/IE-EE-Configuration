@@ -21,7 +21,7 @@
             this.LuaFilePath = LuaFilePath;
         }
 
-        private string CreateEntry(string Section, string Property, string Value)
+        private static string CreateEntry(string Section, string Property, string Value)
         {
             return $"SetPrivateProfileString('{Section}','{Property}','{Value}')";
         }
