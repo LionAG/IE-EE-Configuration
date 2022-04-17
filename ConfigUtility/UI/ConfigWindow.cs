@@ -10,13 +10,13 @@ namespace ConfigUtility.UI
         public string ShortGameName { get; init; }
         public string LongGameName { get; init; }
 
-        private ConfigBackupManager ConfigBackupManager { get; init; }
+        private ConfigBackupManager ConfigBackupManager { get; set; }
         private bool FullBackupExists => this.ConfigBackupManager.BackupExists;
 
         public event GameFoundHandler? GameFound;
         public event UtilityClosedHandler? UtilityClosed;
 
-        private BaldurPropertyManager BaldurPropertyManager { get; init; }
+        private BaldurPropertyManager BaldurPropertyManager { get; set; }
         private bool LuaConfigAvailable => BaldurPropertyManager.ConfigFileExists;
 
         readonly Dictionary<int, string> Graphics_Properties = new()
@@ -141,12 +141,6 @@ namespace ConfigUtility.UI
 
             this.ShortGameName = ShortGameName;
             this.LongGameName = LongGameName;
-
-
-            this.ConfigBackupManager = new(this.LuaConfigPath, "Configuration");
-            this.BaldurPropertyManager = new(this.LuaConfigPath);
-
-            this.Text = $"{LongGameName} - Configuration";
         }
 
         // Methods
@@ -302,6 +296,11 @@ namespace ConfigUtility.UI
 
         private void ConfigWindow_Load(object sender, EventArgs e)
         {
+            this.ConfigBackupManager = new(this.LuaConfigPath, "Configuration");
+            this.BaldurPropertyManager = new(this.LuaConfigPath);
+
+            this.Text = $"{LongGameName} - Configuration";
+
             this.GameFound += ConfigWindow_GameFound;
             this.UtilityClosed += ConfigWindow_UtilityClosed;
 
