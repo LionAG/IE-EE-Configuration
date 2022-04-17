@@ -296,35 +296,45 @@ namespace ConfigUtility.UI
 
         private void ConfigWindow_Load(object sender, EventArgs e)
         {
-            this.ConfigBackupManager = new(this.LuaConfigPath, "Configuration");
-            this.BaldurPropertyManager = new(this.LuaConfigPath);
-
-            this.Text = $"{LongGameName} - Configuration";
-
-            this.GameFound += ConfigWindow_GameFound;
-            this.UtilityClosed += ConfigWindow_UtilityClosed;
-
-            if (BaldurPropertyManager.ConfigFileExists)
+            if (!File.Exists(LuaConfigPath))
             {
-                this.label_GameConfigNameStatus.Text = $"{ShortGameName} Config Found";
-                this.label_GameConfigNameStatus.ForeColor = Color.LimeGreen;
+                Msg.Information($"The configuration file was not found for {ShortGameName}. Ensure that the game is installed and was started at least once.\n\n" +
+                    $"The program will now quit.");
 
-                this.GameFound?.Invoke(ShortGameName, LongGameName);
+                Application.Exit();
             }
             else
             {
-                this.label_GameConfigNameStatus.Text = $"{ShortGameName} Config Not Found";
-                this.label_GameConfigNameStatus.ForeColor = Color.Red;
-            }
+                this.ConfigBackupManager = new(this.LuaConfigPath, "Configuration");
+                this.BaldurPropertyManager = new(this.LuaConfigPath);
 
-            if (!FullBackupExists)
-            {
-                // Do not overwrite any existing backups on load
+                this.Text = $"{LongGameName} - Configuration";
 
-                if (BackupConfiguration(false))
-                    Msg.Information("Configuration has been backed up successfully.");
+                this.GameFound += ConfigWindow_GameFound;
+                this.UtilityClosed += ConfigWindow_UtilityClosed;
+
+                if (BaldurPropertyManager.ConfigFileExists)
+                {
+                    this.label_GameConfigNameStatus.Text = $"{ShortGameName} Config Found";
+                    this.label_GameConfigNameStatus.ForeColor = Color.LimeGreen;
+
+                    this.GameFound?.Invoke(ShortGameName, LongGameName);
+                }
                 else
-                    Msg.Warning("Configuration has not been backed up!");
+                {
+                    this.label_GameConfigNameStatus.Text = $"{ShortGameName} Config Not Found";
+                    this.label_GameConfigNameStatus.ForeColor = Color.Red;
+                }
+
+                if (!FullBackupExists)
+                {
+                    // Do not overwrite any existing backups on load
+
+                    if (BackupConfiguration(false))
+                        Msg.Information("Configuration has been backed up successfully.");
+                    else
+                        Msg.Warning("Configuration has not been backed up!");
+                }
             }
         }
 
