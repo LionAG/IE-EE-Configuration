@@ -7,8 +7,6 @@ namespace ConfigUtility.UI
 
     public partial class ConfigWindow : BaseWindow
     {
-        private readonly string LuaConfig_Path;
-
         public string ShortGameName { get; init; }
         public string LongGameName { get; init; }
 
@@ -133,7 +131,9 @@ namespace ConfigUtility.UI
             { 3, "Game Options,Super Atomic Speed Fighting Action" },
         };
 
-        // Constructor
+        public string LuaConfigPath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                                                    LongGameName,
+                                                    "Baldur.lua");
 
         public ConfigWindow(string ShortGameName, string LongGameName)
         {
@@ -142,12 +142,9 @@ namespace ConfigUtility.UI
             this.ShortGameName = ShortGameName;
             this.LongGameName = LongGameName;
 
-            this.LuaConfig_Path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-                                               LongGameName,
-                                               "Baldur.lua");
 
-            this.ConfigBackupManager = new(this.LuaConfig_Path, "Configuration");
-            this.BaldurPropertyManager = new(this.LuaConfig_Path);
+            this.ConfigBackupManager = new(this.LuaConfigPath, "Configuration");
+            this.BaldurPropertyManager = new(this.LuaConfigPath);
 
             this.Text = $"{LongGameName} - Configuration";
         }
