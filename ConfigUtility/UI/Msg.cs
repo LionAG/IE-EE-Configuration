@@ -5,6 +5,8 @@ namespace ConfigUtility.UI
 {
     public class Msg
     {
+        private static readonly Random r = new();
+
         public static DialogResult Information(string msg, string header = "Information")
         {
             return MessageBox.Show(msg, header, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -31,8 +33,6 @@ namespace ConfigUtility.UI
                                      .AddText(msg)
                                      .Show(t =>
                                      {
-                                         Random r = new();
-
                                          t.Tag = r.NextInt64().ToString();
                                          t.Dismissed += Dismissed;
                                          t.ExpirationTime = DateTime.Now.AddSeconds(ExpirationSec);
