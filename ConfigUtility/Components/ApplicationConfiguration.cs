@@ -23,7 +23,7 @@ namespace ConfigUtility.Components
                 if(!Directory.Exists("Data"))
                     Directory.CreateDirectory("Data");
 
-                return @"Data\Configuration.xml";
+                return $@"Data\{nameof(ApplicationConfiguration)}.xml";
             }
         }
 

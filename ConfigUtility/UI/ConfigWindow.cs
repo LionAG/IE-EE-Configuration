@@ -370,7 +370,7 @@ namespace ConfigUtility.UI
                     if (BackupConfiguration(false))
                         Msg.Information("Configuration has been backed up successfully.");
                     else
-                        Msg.Warning("Configuration has not been backed up!");
+                        Msg.Warning("Configuration has not been backed up.");
                 }
             }
         }
@@ -446,13 +446,13 @@ namespace ConfigUtility.UI
             if (LuaConfigAvailable)
             {
                 this.UpdateUI();
-                Msg.Information("Content has been refreshed!");
+                Msg.Information("Option status has been refreshed!");
             }
         }
 
         private void CreateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("Select Yes to create a new backup. Any existing backup will be overwritten.",
+            if (DialogResult.Yes == MessageBox.Show("Do you want to create a new backup?\n\nAny existing backup will be overwritten.",
                                                     "Information",
                                                     MessageBoxButtons.YesNo,
                                                     MessageBoxIcon.Asterisk))
@@ -539,14 +539,15 @@ namespace ConfigUtility.UI
                 return;
             }
 
-            var text = "The following changes will be performed:\n\n"
-                       + "Set game speed to 40 AI Updates / Sec\n"
-                       + "Enable footsteps during combat\n"
-                       + "Enable date showing on pause\n"
-                       + "Enable enhanced path search\n"
-                       + "Disable cosmetic attacks\n\n";
+            var text = "The following changes will be written:\n\n"
+                       + "- Set game speed to 40 AI Updates / Sec\n"
+                       + "- Enable footsteps during combat\n"
+                       + "- Enable date showing on pause\n"
+                       + "- Enable enhanced path search\n"
+                       + "- Disable cosmetic attacks\n\n"
+                       + "Select OK to make changes.";
 
-            if (DialogResult.OK == MessageBox.Show(text, "Optimal configuration writer", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
+            if (DialogResult.OK == MessageBox.Show(text, "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
             {
                 BaldurPropertyManager.SetProperty("Program Options", "Maximum Frame Rate", "40");
                 BaldurPropertyManager.SetBoolean("Game Options,Disable Foot Steps During Combat", false);
@@ -556,7 +557,7 @@ namespace ConfigUtility.UI
 
                 this.UpdateUI();
 
-                Msg.Information("Optimal configuration written!");
+                Msg.Information("Configuration written!");
             }
         }
 
