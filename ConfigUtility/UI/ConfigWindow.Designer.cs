@@ -65,6 +65,7 @@
             this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog_SelectGameConfig = new System.Windows.Forms.OpenFileDialog();
             this.panel_GraphicOptions.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -96,9 +97,10 @@
             "Use Nearest Neighbour Scaling",
             "Window - Maximized",
             "Window - Fullscreen"});
-            this.checkedListBox_GraphicOptions.Location = new System.Drawing.Point(14, 51);
+            this.checkedListBox_GraphicOptions.Location = new System.Drawing.Point(11, 41);
+            this.checkedListBox_GraphicOptions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkedListBox_GraphicOptions.Name = "checkedListBox_GraphicOptions";
-            this.checkedListBox_GraphicOptions.Size = new System.Drawing.Size(301, 336);
+            this.checkedListBox_GraphicOptions.Size = new System.Drawing.Size(241, 264);
             this.checkedListBox_GraphicOptions.TabIndex = 1;
             this.checkedListBox_GraphicOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_GraphicOptions_ItemCheck);
             // 
@@ -108,9 +110,10 @@
             this.panel_GraphicOptions.Controls.Add(this.panel1);
             this.panel_GraphicOptions.Controls.Add(this.label1);
             this.panel_GraphicOptions.Controls.Add(this.checkedListBox_GraphicOptions);
-            this.panel_GraphicOptions.Location = new System.Drawing.Point(9, 38);
+            this.panel_GraphicOptions.Location = new System.Drawing.Point(7, 30);
+            this.panel_GraphicOptions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_GraphicOptions.Name = "panel_GraphicOptions";
-            this.panel_GraphicOptions.Size = new System.Drawing.Size(330, 571);
+            this.panel_GraphicOptions.Size = new System.Drawing.Size(264, 457);
             this.panel_GraphicOptions.TabIndex = 0;
             // 
             // panel1
@@ -119,18 +122,20 @@
             this.panel1.Controls.Add(this.label_SpeedValueDisplay);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.hScrollBar_GameSpeed);
-            this.panel1.Location = new System.Drawing.Point(14, 407);
+            this.panel1.Location = new System.Drawing.Point(11, 326);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(301, 137);
+            this.panel1.Size = new System.Drawing.Size(241, 110);
             this.panel1.TabIndex = 3;
             // 
             // label_SpeedValueDisplay
             // 
             this.label_SpeedValueDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label_SpeedValueDisplay.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label_SpeedValueDisplay.Location = new System.Drawing.Point(0, 110);
+            this.label_SpeedValueDisplay.Location = new System.Drawing.Point(0, 88);
+            this.label_SpeedValueDisplay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_SpeedValueDisplay.Name = "label_SpeedValueDisplay";
-            this.label_SpeedValueDisplay.Size = new System.Drawing.Size(299, 25);
+            this.label_SpeedValueDisplay.Size = new System.Drawing.Size(239, 20);
             this.label_SpeedValueDisplay.TabIndex = 5;
             this.label_SpeedValueDisplay.Text = "30 AI Updates / Sec";
             this.label_SpeedValueDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -139,20 +144,21 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cascadia Code SemiBold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(3, 9);
+            this.label2.Location = new System.Drawing.Point(2, 7);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 24);
+            this.label2.Size = new System.Drawing.Size(99, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Game Speed";
             // 
             // hScrollBar_GameSpeed
             // 
             this.hScrollBar_GameSpeed.Enabled = false;
-            this.hScrollBar_GameSpeed.Location = new System.Drawing.Point(8, 51);
+            this.hScrollBar_GameSpeed.Location = new System.Drawing.Point(6, 41);
             this.hScrollBar_GameSpeed.Maximum = 69;
             this.hScrollBar_GameSpeed.Minimum = 15;
             this.hScrollBar_GameSpeed.Name = "hScrollBar_GameSpeed";
-            this.hScrollBar_GameSpeed.Size = new System.Drawing.Size(284, 43);
+            this.hScrollBar_GameSpeed.Size = new System.Drawing.Size(227, 43);
             this.hScrollBar_GameSpeed.TabIndex = 3;
             this.hScrollBar_GameSpeed.Value = 30;
             this.hScrollBar_GameSpeed.ValueChanged += new System.EventHandler(this.HScrollBar_GameSpeed_ValueChanged);
@@ -162,8 +168,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Cascadia Code", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(328, 47);
+            this.label1.Size = new System.Drawing.Size(262, 38);
             this.label1.TabIndex = 2;
             this.label1.Text = "GRAPHICS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -175,9 +182,10 @@
             this.panel4.Controls.Add(this.checkedListBox_ProgramOptionsTwo);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.checkedListBox_ProgramOptionsOne);
-            this.panel4.Location = new System.Drawing.Point(365, 39);
+            this.panel4.Location = new System.Drawing.Point(292, 31);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1038, 570);
+            this.panel4.Size = new System.Drawing.Size(831, 456);
             this.panel4.TabIndex = 4;
             // 
             // checkedListBox_ProgramOptionsThree
@@ -206,9 +214,10 @@
             "Auto Pause State",
             "Cloud Saves Enabled",
             "Active Campaign"});
-            this.checkedListBox_ProgramOptionsThree.Location = new System.Drawing.Point(692, 49);
+            this.checkedListBox_ProgramOptionsThree.Location = new System.Drawing.Point(554, 39);
+            this.checkedListBox_ProgramOptionsThree.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkedListBox_ProgramOptionsThree.Name = "checkedListBox_ProgramOptionsThree";
-            this.checkedListBox_ProgramOptionsThree.Size = new System.Drawing.Size(301, 504);
+            this.checkedListBox_ProgramOptionsThree.Size = new System.Drawing.Size(241, 396);
             this.checkedListBox_ProgramOptionsThree.TabIndex = 4;
             this.checkedListBox_ProgramOptionsThree.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_ProgramOptionsThree_ItemCheck);
             // 
@@ -238,9 +247,10 @@
             "Color Circles",
             "Extra Feedback",
             "Cleric Ranger Spells"});
-            this.checkedListBox_ProgramOptionsTwo.Location = new System.Drawing.Point(369, 50);
+            this.checkedListBox_ProgramOptionsTwo.Location = new System.Drawing.Point(295, 40);
+            this.checkedListBox_ProgramOptionsTwo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkedListBox_ProgramOptionsTwo.Name = "checkedListBox_ProgramOptionsTwo";
-            this.checkedListBox_ProgramOptionsTwo.Size = new System.Drawing.Size(301, 504);
+            this.checkedListBox_ProgramOptionsTwo.Size = new System.Drawing.Size(241, 396);
             this.checkedListBox_ProgramOptionsTwo.TabIndex = 3;
             this.checkedListBox_ProgramOptionsTwo.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_ProgramOptionsTwo_ItemCheck);
             // 
@@ -249,8 +259,9 @@
             this.label8.Dock = System.Windows.Forms.DockStyle.Top;
             this.label8.Font = new System.Drawing.Font("Cascadia Code", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(1036, 47);
+            this.label8.Size = new System.Drawing.Size(829, 38);
             this.label8.TabIndex = 2;
             this.label8.Text = "PROGRAM";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -281,9 +292,10 @@
             "Infravision",
             "Render Explored Map",
             "3E Thief Sneak Attack"});
-            this.checkedListBox_ProgramOptionsOne.Location = new System.Drawing.Point(43, 50);
+            this.checkedListBox_ProgramOptionsOne.Location = new System.Drawing.Point(34, 40);
+            this.checkedListBox_ProgramOptionsOne.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkedListBox_ProgramOptionsOne.Name = "checkedListBox_ProgramOptionsOne";
-            this.checkedListBox_ProgramOptionsOne.Size = new System.Drawing.Size(301, 504);
+            this.checkedListBox_ProgramOptionsOne.Size = new System.Drawing.Size(241, 396);
             this.checkedListBox_ProgramOptionsOne.TabIndex = 1;
             this.checkedListBox_ProgramOptionsOne.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_ProgramOptionsOne_ItemCheck);
             // 
@@ -296,9 +308,10 @@
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Controls.Add(this.panel_GraphicOptions);
             this.panel5.Controls.Add(this.menuStrip1);
-            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Location = new System.Drawing.Point(2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1413, 932);
+            this.panel5.Size = new System.Drawing.Size(1130, 746);
             this.panel5.TabIndex = 5;
             // 
             // panel6
@@ -306,9 +319,10 @@
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.panel2);
             this.panel6.Controls.Add(this.label4);
-            this.panel6.Location = new System.Drawing.Point(365, 624);
+            this.panel6.Location = new System.Drawing.Point(292, 499);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1038, 259);
+            this.panel6.Size = new System.Drawing.Size(831, 208);
             this.panel6.TabIndex = 8;
             // 
             // panel2
@@ -316,9 +330,10 @@
             this.panel2.Controls.Add(this.checkedListBox_ExtendedProgramConfigurationThree);
             this.panel2.Controls.Add(this.checkedListBox_ExtendedProgramConfigurationTwo);
             this.panel2.Controls.Add(this.checkedListBox_ExtendedProgramConfigurationOne);
-            this.panel2.Location = new System.Drawing.Point(3, 50);
+            this.panel2.Location = new System.Drawing.Point(2, 40);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1030, 204);
+            this.panel2.Size = new System.Drawing.Size(824, 163);
             this.panel2.TabIndex = 5;
             // 
             // checkedListBox_ExtendedProgramConfigurationThree
@@ -333,9 +348,10 @@
             "Show Date On Pause",
             "Reverse Mouse Wheel Zoom",
             "Super Atomic Speed Fighting Action"});
-            this.checkedListBox_ExtendedProgramConfigurationThree.Location = new System.Drawing.Point(680, 46);
+            this.checkedListBox_ExtendedProgramConfigurationThree.Location = new System.Drawing.Point(544, 37);
+            this.checkedListBox_ExtendedProgramConfigurationThree.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkedListBox_ExtendedProgramConfigurationThree.Name = "checkedListBox_ExtendedProgramConfigurationThree";
-            this.checkedListBox_ExtendedProgramConfigurationThree.Size = new System.Drawing.Size(320, 112);
+            this.checkedListBox_ExtendedProgramConfigurationThree.Size = new System.Drawing.Size(256, 88);
             this.checkedListBox_ExtendedProgramConfigurationThree.TabIndex = 6;
             this.checkedListBox_ExtendedProgramConfigurationThree.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_ExtendedProgramConfigurationThree_ItemCheck);
             // 
@@ -351,9 +367,10 @@
             "Extra Combat Info",
             "Force Dialog Pause",
             "Enhanced Path Search"});
-            this.checkedListBox_ExtendedProgramConfigurationTwo.Location = new System.Drawing.Point(357, 46);
+            this.checkedListBox_ExtendedProgramConfigurationTwo.Location = new System.Drawing.Point(286, 37);
+            this.checkedListBox_ExtendedProgramConfigurationTwo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkedListBox_ExtendedProgramConfigurationTwo.Name = "checkedListBox_ExtendedProgramConfigurationTwo";
-            this.checkedListBox_ExtendedProgramConfigurationTwo.Size = new System.Drawing.Size(320, 112);
+            this.checkedListBox_ExtendedProgramConfigurationTwo.Size = new System.Drawing.Size(256, 88);
             this.checkedListBox_ExtendedProgramConfigurationTwo.TabIndex = 5;
             this.checkedListBox_ExtendedProgramConfigurationTwo.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_ExtendedProgramConfigurationTwo_ItemCheck);
             // 
@@ -369,9 +386,10 @@
             "UI Edit Mode",
             "Strref On",
             "Disable Footsteps During Combat"});
-            this.checkedListBox_ExtendedProgramConfigurationOne.Location = new System.Drawing.Point(31, 46);
+            this.checkedListBox_ExtendedProgramConfigurationOne.Location = new System.Drawing.Point(25, 37);
+            this.checkedListBox_ExtendedProgramConfigurationOne.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkedListBox_ExtendedProgramConfigurationOne.Name = "checkedListBox_ExtendedProgramConfigurationOne";
-            this.checkedListBox_ExtendedProgramConfigurationOne.Size = new System.Drawing.Size(320, 112);
+            this.checkedListBox_ExtendedProgramConfigurationOne.Size = new System.Drawing.Size(256, 88);
             this.checkedListBox_ExtendedProgramConfigurationOne.TabIndex = 4;
             this.checkedListBox_ExtendedProgramConfigurationOne.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_ExtendedProgramConfigurationOne_ItemCheck);
             // 
@@ -380,8 +398,9 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.Font = new System.Drawing.Font("Cascadia Code", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1036, 47);
+            this.label4.Size = new System.Drawing.Size(829, 38);
             this.label4.TabIndex = 3;
             this.label4.Text = "EXTENDED PROGRAM CONFIGURATION";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -391,9 +410,10 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.checkedListBox_MultiplayerOptions);
-            this.panel3.Location = new System.Drawing.Point(9, 623);
+            this.panel3.Location = new System.Drawing.Point(7, 498);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(330, 122);
+            this.panel3.Size = new System.Drawing.Size(264, 98);
             this.panel3.TabIndex = 4;
             // 
             // label9
@@ -401,8 +421,9 @@
             this.label9.Dock = System.Windows.Forms.DockStyle.Top;
             this.label9.Font = new System.Drawing.Font("Cascadia Code", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(328, 47);
+            this.label9.Size = new System.Drawing.Size(262, 38);
             this.label9.TabIndex = 2;
             this.label9.Text = "MULTIPLAYER";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -417,9 +438,10 @@
             this.checkedListBox_MultiplayerOptions.Items.AddRange(new object[] {
             "Disable Banters",
             "Enable Chat Menu"});
-            this.checkedListBox_MultiplayerOptions.Location = new System.Drawing.Point(14, 50);
+            this.checkedListBox_MultiplayerOptions.Location = new System.Drawing.Point(11, 40);
+            this.checkedListBox_MultiplayerOptions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkedListBox_MultiplayerOptions.Name = "checkedListBox_MultiplayerOptions";
-            this.checkedListBox_MultiplayerOptions.Size = new System.Drawing.Size(301, 56);
+            this.checkedListBox_MultiplayerOptions.Size = new System.Drawing.Size(241, 44);
             this.checkedListBox_MultiplayerOptions.TabIndex = 1;
             this.checkedListBox_MultiplayerOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_MultiplayerOptions_ItemCheck);
             // 
@@ -427,9 +449,10 @@
             // 
             this.panel_GameConfigStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_GameConfigStatus.Controls.Add(this.label_GameConfigNameStatus);
-            this.panel_GameConfigStatus.Location = new System.Drawing.Point(9, 766);
+            this.panel_GameConfigStatus.Location = new System.Drawing.Point(7, 613);
+            this.panel_GameConfigStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel_GameConfigStatus.Name = "panel_GameConfigStatus";
-            this.panel_GameConfigStatus.Size = new System.Drawing.Size(330, 117);
+            this.panel_GameConfigStatus.Size = new System.Drawing.Size(264, 94);
             this.panel_GameConfigStatus.TabIndex = 6;
             // 
             // label_GameConfigNameStatus
@@ -438,8 +461,9 @@
             this.label_GameConfigNameStatus.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label_GameConfigNameStatus.ForeColor = System.Drawing.Color.Red;
             this.label_GameConfigNameStatus.Location = new System.Drawing.Point(0, 0);
+            this.label_GameConfigNameStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_GameConfigNameStatus.Name = "label_GameConfigNameStatus";
-            this.label_GameConfigNameStatus.Size = new System.Drawing.Size(328, 115);
+            this.label_GameConfigNameStatus.Size = new System.Drawing.Size(262, 92);
             this.label_GameConfigNameStatus.TabIndex = 0;
             this.label_GameConfigNameStatus.Text = "BG:EE Config Not Found";
             this.label_GameConfigNameStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -448,9 +472,10 @@
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(0, 890);
+            this.label3.Location = new System.Drawing.Point(0, 712);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1413, 42);
+            this.label3.Size = new System.Drawing.Size(1130, 34);
             this.label3.TabIndex = 5;
             this.label3.Text = "All changes are saved automatically.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -464,7 +489,8 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1413, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1130, 28);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -476,34 +502,34 @@
             this.writeOptimalConfigurationToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
-            this.utilityToolStripMenuItem.Size = new System.Drawing.Size(73, 29);
+            this.utilityToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.utilityToolStripMenuItem.Text = "Utility";
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(339, 34);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(281, 26);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItem_Click);
             // 
             // extendedConfigurationToolStripMenuItem
             // 
             this.extendedConfigurationToolStripMenuItem.Name = "extendedConfigurationToolStripMenuItem";
-            this.extendedConfigurationToolStripMenuItem.Size = new System.Drawing.Size(339, 34);
+            this.extendedConfigurationToolStripMenuItem.Size = new System.Drawing.Size(281, 26);
             this.extendedConfigurationToolStripMenuItem.Text = "Additional Options";
             this.extendedConfigurationToolStripMenuItem.Click += new System.EventHandler(this.ExtendedConfigurationToolStripMenuItem_Click);
             // 
             // writeOptimalConfigurationToolStripMenuItem
             // 
             this.writeOptimalConfigurationToolStripMenuItem.Name = "writeOptimalConfigurationToolStripMenuItem";
-            this.writeOptimalConfigurationToolStripMenuItem.Size = new System.Drawing.Size(339, 34);
+            this.writeOptimalConfigurationToolStripMenuItem.Size = new System.Drawing.Size(281, 26);
             this.writeOptimalConfigurationToolStripMenuItem.Text = "Write Optimal Configuration";
             this.writeOptimalConfigurationToolStripMenuItem.Click += new System.EventHandler(this.WriteOptimalConfigurationToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(339, 34);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(281, 26);
             this.closeToolStripMenuItem.Text = "Exit";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
             // 
@@ -514,27 +540,27 @@
             this.createToolStripMenuItem,
             this.restoreToolStripMenuItem});
             this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.backupToolStripMenuItem.Text = "Backup";
             // 
             // checkToolStripMenuItem
             // 
             this.checkToolStripMenuItem.Name = "checkToolStripMenuItem";
-            this.checkToolStripMenuItem.Size = new System.Drawing.Size(173, 34);
+            this.checkToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.checkToolStripMenuItem.Text = "Check";
             this.checkToolStripMenuItem.Click += new System.EventHandler(this.CheckToolStripMenuItem_Click);
             // 
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(173, 34);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.createToolStripMenuItem.Text = "Create";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.CreateToolStripMenuItem_Click);
             // 
             // restoreToolStripMenuItem
             // 
             this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(173, 34);
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
             this.restoreToolStripMenuItem.Text = "Restore";
             this.restoreToolStripMenuItem.Click += new System.EventHandler(this.RestoreToolStripMenuItem_Click);
             // 
@@ -543,23 +569,30 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(164, 34);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(133, 26);
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.AboutToolStripMenuItem1_Click);
             // 
+            // openFileDialog_SelectGameConfig
+            // 
+            this.openFileDialog_SelectGameConfig.DefaultExt = "ini";
+            this.openFileDialog_SelectGameConfig.FileName = "Baldur.lua";
+            this.openFileDialog_SelectGameConfig.Filter = "Lua Files|*.lua";
+            // 
             // ConfigWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1418, 935);
+            this.ClientSize = new System.Drawing.Size(1134, 748);
             this.Controls.Add(this.panel5);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ConfigWindow";
             this.Load += new System.EventHandler(this.ConfigWindow_Load);
             this.panel_GraphicOptions.ResumeLayout(false);
@@ -617,5 +650,6 @@
         private CheckedListBox checkedListBox_ExtendedProgramConfigurationOne;
         private CheckedListBox checkedListBox_ExtendedProgramConfigurationTwo;
         private CheckedListBox checkedListBox_ExtendedProgramConfigurationThree;
+        private OpenFileDialog openFileDialog_SelectGameConfig;
     }
 }

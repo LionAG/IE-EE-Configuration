@@ -7,6 +7,8 @@ namespace ConfigUtility.UI
 
     public partial class ConfigWindow : BaseWindow
     {
+        private ApplicationConfigurationData Config = new();
+
         public string ShortGameName { get; init; }
         public string LongGameName { get; init; }
 
@@ -130,10 +132,6 @@ namespace ConfigUtility.UI
             { 2, "Game Options,Reverse Mouse Wheel Zoom" },
             { 3, "Game Options,Super Atomic Speed Fighting Action" },
         };
-
-        public string LuaConfigPath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-                                                    LongGameName,
-                                                    "Baldur.lua");
 
         public ConfigWindow(string ShortGameName, string LongGameName)
         {
@@ -281,6 +279,35 @@ namespace ConfigUtility.UI
             }
         }
 
+        private string? LocateGameConfig()
+        {
+            try
+            {
+                var BasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                                            LongGameName,
+                                            "Baldur.lua");
+
+                if (BasePath is not null && File.Exists(BasePath))
+                {
+                    return BasePath;
+                }
+
+                Msg.Information("Please point me to the location of your game configuration file.");
+
+                if (openFileDialog_SelectGameConfig.ShowDialog() == DialogResult.OK)
+                {
+                    if (Path.GetFileName(openFileDialog_SelectGameConfig.FileName) == "Baldur.lua")
+                        return openFileDialog_SelectGameConfig.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogLine(ex.Message, LogType.Exception);
+            }
+
+            return null;
+        }
+
         // Event handlers
 
         private void HScrollBar_GameSpeed_ValueChanged(object sender, EventArgs e)
@@ -296,7 +323,17 @@ namespace ConfigUtility.UI
 
         private void ConfigWindow_Load(object sender, EventArgs e)
         {
-            if (!File.Exists(LuaConfigPath))
+            if(ApplicationConfiguration.Load(out var config))
+            {
+                this.Config = config;
+            }
+            else
+            {
+                this.Config.BaldurLuaPath = LocateGameConfig();
+                ApplicationConfiguration.Write(Config);
+            }
+
+            if (this.Config.BaldurLuaPath is null)
             {
                 Msg.Information($"The configuration file was not found for {ShortGameName}. Ensure that the game is installed and was started at least once.\n\n" +
                     $"The program will now quit.");
@@ -305,8 +342,8 @@ namespace ConfigUtility.UI
             }
             else
             {
-                this.ConfigBackupManager = new(this.LuaConfigPath, "Configuration");
-                this.BaldurPropertyManager = new(this.LuaConfigPath);
+                this.ConfigBackupManager = new(this.Config.BaldurLuaPath, "Configuration");
+                this.BaldurPropertyManager = new(this.Config.BaldurLuaPath);
 
                 this.Text = $"{LongGameName} - Configuration";
 
