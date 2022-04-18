@@ -8,6 +8,7 @@ namespace ConfigUtility.UI
     public partial class ConfigWindow : BaseWindow
     {
         private ApplicationConfigurationData Config = new();
+        private string ConfigFileName => "Baldur.lua";
 
         public string ShortGameName { get; init; }
         public string LongGameName { get; init; }
@@ -285,18 +286,18 @@ namespace ConfigUtility.UI
             {
                 var BasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
                                             LongGameName,
-                                            "Baldur.lua");
+                                            ConfigFileName);
 
                 if (BasePath is not null && File.Exists(BasePath))
                 {
                     return BasePath;
                 }
 
-                Msg.Information("Please point me to the location of your game configuration file.");
+                Msg.Information($"Please point me to the location of your {ConfigFileName} file.");
 
                 if (openFileDialog_SelectGameConfig.ShowDialog() == DialogResult.OK)
                 {
-                    if (Path.GetFileName(openFileDialog_SelectGameConfig.FileName) == "Baldur.lua")
+                    if (Path.GetFileName(openFileDialog_SelectGameConfig.FileName) == ConfigFileName)
                         return openFileDialog_SelectGameConfig.FileName;
                 }
             }
@@ -471,7 +472,7 @@ namespace ConfigUtility.UI
 
         private void RestoreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("Baldur.lua will be restored.",
+            if (DialogResult.Yes == MessageBox.Show($"{ConfigFileName} will be restored.",
                                                     "Information",
                                                     MessageBoxButtons.YesNo,
                                                     MessageBoxIcon.Asterisk))
