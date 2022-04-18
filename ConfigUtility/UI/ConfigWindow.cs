@@ -446,7 +446,7 @@ namespace ConfigUtility.UI
             if (LuaConfigAvailable)
             {
                 this.UpdateUI();
-                Msg.ToastInformation("Content has been refreshed!");
+                Msg.Information("Content has been refreshed!");
             }
         }
 
@@ -459,12 +459,12 @@ namespace ConfigUtility.UI
             {
                 if (BackupConfiguration(true))
                 {
-                    Msg.ToastInformation($"Backup successfully created!");
+                    Msg.Information($"Backup successfully created!");
                     this.UpdateUI();
                 }
                 else
                 {
-                    Msg.ToastInformation($"Backup creation failed!");
+                    Msg.Information($"Backup creation failed!");
                 }
             }
         }
@@ -478,12 +478,12 @@ namespace ConfigUtility.UI
             {
                 if (ConfigBackupManager.RestoreBackup())
                 {
-                    Msg.ToastInformation($"Backup successfully restored!");
+                    Msg.Information($"Backup successfully restored!");
                     this.UpdateUI();
                 }
                 else
                 {
-                    Msg.ToastInformation($"Cannot restore backup!");
+                    Msg.Information($"Cannot restore backup!");
                 }
             }
         }
@@ -556,7 +556,7 @@ namespace ConfigUtility.UI
 
                 this.UpdateUI();
 
-                Msg.ToastInformation("Optimal configuration written!");
+                Msg.Information("Optimal configuration written!");
             }
         }
 

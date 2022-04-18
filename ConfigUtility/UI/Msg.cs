@@ -1,7 +1,4 @@
-﻿using Microsoft.Toolkit.Uwp.Notifications;
-using Windows.UI.Notifications;
-
-namespace ConfigUtility.UI
+﻿namespace ConfigUtility.UI
 {
     public class Msg
     {
@@ -27,21 +24,21 @@ namespace ConfigUtility.UI
             return MessageBox.Show(msg, header, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        public static void ToastInformation(string msg, int ExpirationSec = 10)
-        {
-            new ToastContentBuilder().AddCustomTimeStamp(DateTime.Now)
-                                     .AddText(msg)
-                                     .Show(t =>
-                                     {
-                                         t.Tag = r.NextInt64().ToString();
-                                         t.Dismissed += Dismissed;
-                                         t.ExpirationTime = DateTime.Now.AddSeconds(ExpirationSec);
-                                     });
-        }
+        //public static void ToastInformation(string msg, int ExpirationSec = 10)
+        //{
+        //    new ToastContentBuilder().AddCustomTimeStamp(DateTime.Now)
+        //                             .AddText(msg)
+        //                             .Show(t =>
+        //                             {
+        //                                 t.Tag = r.NextInt64().ToString();
+        //                                 t.Dismissed += Dismissed;
+        //                                 t.ExpirationTime = DateTime.Now.AddSeconds(ExpirationSec);
+        //                             });
+        //}
 
-        private static void Dismissed(ToastNotification sender, ToastDismissedEventArgs args)
-        {
-            ToastNotificationManagerCompat.History.Remove(sender.Tag);
-        }
+        //private static void Dismissed(ToastNotification sender, ToastDismissedEventArgs args)
+        //{
+        //    ToastNotificationManagerCompat.History.Remove(sender.Tag);
+        //}
     }
 }
