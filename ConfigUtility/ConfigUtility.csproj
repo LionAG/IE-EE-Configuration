@@ -8,6 +8,7 @@
     <DebugType>portable</DebugType>
     <Version>$(VersionPrefix)</Version>
     <AssemblyVersion>1.0.2</AssemblyVersion>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>

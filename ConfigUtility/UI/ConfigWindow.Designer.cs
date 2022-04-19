@@ -40,7 +40,7 @@
             this.checkedListBox_ProgramOptionsTwo = new System.Windows.Forms.CheckedListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.checkedListBox_ProgramOptionsOne = new System.Windows.Forms.CheckedListBox();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel_Content = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkedListBox_ExtendedProgramConfigurationThree = new System.Windows.Forms.CheckedListBox();
@@ -69,7 +69,7 @@
             this.panel_GraphicOptions.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.panel_Content.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -97,10 +97,10 @@
             "Use Nearest Neighbour Scaling",
             "Window - Maximized",
             "Window - Fullscreen"});
-            this.checkedListBox_GraphicOptions.Location = new System.Drawing.Point(11, 41);
+            this.checkedListBox_GraphicOptions.Location = new System.Drawing.Point(10, 31);
             this.checkedListBox_GraphicOptions.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBox_GraphicOptions.Name = "checkedListBox_GraphicOptions";
-            this.checkedListBox_GraphicOptions.Size = new System.Drawing.Size(241, 264);
+            this.checkedListBox_GraphicOptions.Size = new System.Drawing.Size(211, 216);
             this.checkedListBox_GraphicOptions.TabIndex = 1;
             this.checkedListBox_GraphicOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_GraphicOptions_ItemCheck);
             // 
@@ -110,10 +110,10 @@
             this.panel_GraphicOptions.Controls.Add(this.panel1);
             this.panel_GraphicOptions.Controls.Add(this.label1);
             this.panel_GraphicOptions.Controls.Add(this.checkedListBox_GraphicOptions);
-            this.panel_GraphicOptions.Location = new System.Drawing.Point(7, 30);
+            this.panel_GraphicOptions.Location = new System.Drawing.Point(6, 22);
             this.panel_GraphicOptions.Margin = new System.Windows.Forms.Padding(2);
             this.panel_GraphicOptions.Name = "panel_GraphicOptions";
-            this.panel_GraphicOptions.Size = new System.Drawing.Size(264, 457);
+            this.panel_GraphicOptions.Size = new System.Drawing.Size(231, 367);
             this.panel_GraphicOptions.TabIndex = 0;
             // 
             // panel1
@@ -122,20 +122,20 @@
             this.panel1.Controls.Add(this.label_SpeedValueDisplay);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.hScrollBar_GameSpeed);
-            this.panel1.Location = new System.Drawing.Point(11, 326);
+            this.panel1.Location = new System.Drawing.Point(10, 261);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(241, 110);
+            this.panel1.Size = new System.Drawing.Size(211, 83);
             this.panel1.TabIndex = 3;
             // 
             // label_SpeedValueDisplay
             // 
             this.label_SpeedValueDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label_SpeedValueDisplay.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label_SpeedValueDisplay.Location = new System.Drawing.Point(0, 75);
+            this.label_SpeedValueDisplay.Location = new System.Drawing.Point(0, 56);
             this.label_SpeedValueDisplay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_SpeedValueDisplay.Name = "label_SpeedValueDisplay";
-            this.label_SpeedValueDisplay.Size = new System.Drawing.Size(239, 33);
+            this.label_SpeedValueDisplay.Size = new System.Drawing.Size(209, 25);
             this.label_SpeedValueDisplay.TabIndex = 5;
             this.label_SpeedValueDisplay.Text = "30 AI Updates / Sec";
             this.label_SpeedValueDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -147,8 +147,8 @@
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.label2.Size = new System.Drawing.Size(239, 30);
+            this.label2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.label2.Size = new System.Drawing.Size(209, 22);
             this.label2.TabIndex = 4;
             this.label2.Text = "Game Speed";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -156,11 +156,11 @@
             // hScrollBar_GameSpeed
             // 
             this.hScrollBar_GameSpeed.Enabled = false;
-            this.hScrollBar_GameSpeed.Location = new System.Drawing.Point(6, 41);
+            this.hScrollBar_GameSpeed.Location = new System.Drawing.Point(5, 31);
             this.hScrollBar_GameSpeed.Maximum = 69;
             this.hScrollBar_GameSpeed.Minimum = 15;
             this.hScrollBar_GameSpeed.Name = "hScrollBar_GameSpeed";
-            this.hScrollBar_GameSpeed.Size = new System.Drawing.Size(227, 26);
+            this.hScrollBar_GameSpeed.Size = new System.Drawing.Size(199, 26);
             this.hScrollBar_GameSpeed.TabIndex = 3;
             this.hScrollBar_GameSpeed.Value = 30;
             this.hScrollBar_GameSpeed.ValueChanged += new System.EventHandler(this.HScrollBar_GameSpeed_ValueChanged);
@@ -172,7 +172,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 38);
+            this.label1.Size = new System.Drawing.Size(229, 28);
             this.label1.TabIndex = 2;
             this.label1.Text = "GRAPHICS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -184,10 +184,10 @@
             this.panel4.Controls.Add(this.checkedListBox_ProgramOptionsTwo);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.checkedListBox_ProgramOptionsOne);
-            this.panel4.Location = new System.Drawing.Point(292, 31);
+            this.panel4.Location = new System.Drawing.Point(256, 23);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(831, 456);
+            this.panel4.Size = new System.Drawing.Size(727, 366);
             this.panel4.TabIndex = 4;
             // 
             // checkedListBox_ProgramOptionsThree
@@ -216,10 +216,10 @@
             "Auto Pause State",
             "Cloud Saves Enabled",
             "Active Campaign"});
-            this.checkedListBox_ProgramOptionsThree.Location = new System.Drawing.Point(554, 39);
+            this.checkedListBox_ProgramOptionsThree.Location = new System.Drawing.Point(485, 29);
             this.checkedListBox_ProgramOptionsThree.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBox_ProgramOptionsThree.Name = "checkedListBox_ProgramOptionsThree";
-            this.checkedListBox_ProgramOptionsThree.Size = new System.Drawing.Size(241, 396);
+            this.checkedListBox_ProgramOptionsThree.Size = new System.Drawing.Size(211, 324);
             this.checkedListBox_ProgramOptionsThree.TabIndex = 4;
             this.checkedListBox_ProgramOptionsThree.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_ProgramOptionsThree_ItemCheck);
             // 
@@ -249,10 +249,10 @@
             "Color Circles",
             "Extra Feedback",
             "Cleric Ranger Spells"});
-            this.checkedListBox_ProgramOptionsTwo.Location = new System.Drawing.Point(295, 40);
+            this.checkedListBox_ProgramOptionsTwo.Location = new System.Drawing.Point(258, 30);
             this.checkedListBox_ProgramOptionsTwo.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBox_ProgramOptionsTwo.Name = "checkedListBox_ProgramOptionsTwo";
-            this.checkedListBox_ProgramOptionsTwo.Size = new System.Drawing.Size(241, 396);
+            this.checkedListBox_ProgramOptionsTwo.Size = new System.Drawing.Size(211, 324);
             this.checkedListBox_ProgramOptionsTwo.TabIndex = 3;
             this.checkedListBox_ProgramOptionsTwo.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_ProgramOptionsTwo_ItemCheck);
             // 
@@ -263,7 +263,7 @@
             this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(829, 38);
+            this.label8.Size = new System.Drawing.Size(725, 28);
             this.label8.TabIndex = 2;
             this.label8.Text = "PROGRAM";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -294,37 +294,37 @@
             "Infravision",
             "Render Explored Map",
             "3E Thief Sneak Attack"});
-            this.checkedListBox_ProgramOptionsOne.Location = new System.Drawing.Point(34, 40);
+            this.checkedListBox_ProgramOptionsOne.Location = new System.Drawing.Point(30, 30);
             this.checkedListBox_ProgramOptionsOne.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBox_ProgramOptionsOne.Name = "checkedListBox_ProgramOptionsOne";
-            this.checkedListBox_ProgramOptionsOne.Size = new System.Drawing.Size(241, 396);
+            this.checkedListBox_ProgramOptionsOne.Size = new System.Drawing.Size(211, 324);
             this.checkedListBox_ProgramOptionsOne.TabIndex = 1;
             this.checkedListBox_ProgramOptionsOne.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_ProgramOptionsOne_ItemCheck);
             // 
-            // panel5
+            // panel_Content
             // 
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.panel3);
-            this.panel5.Controls.Add(this.panel_GameConfigStatus);
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.panel4);
-            this.panel5.Controls.Add(this.panel_GraphicOptions);
-            this.panel5.Controls.Add(this.menuStrip1);
-            this.panel5.Location = new System.Drawing.Point(2, 2);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1130, 746);
-            this.panel5.TabIndex = 5;
+            this.panel_Content.Controls.Add(this.panel6);
+            this.panel_Content.Controls.Add(this.panel3);
+            this.panel_Content.Controls.Add(this.panel_GameConfigStatus);
+            this.panel_Content.Controls.Add(this.label3);
+            this.panel_Content.Controls.Add(this.panel4);
+            this.panel_Content.Controls.Add(this.panel_GraphicOptions);
+            this.panel_Content.Controls.Add(this.menuStrip1);
+            this.panel_Content.Location = new System.Drawing.Point(2, 2);
+            this.panel_Content.Margin = new System.Windows.Forms.Padding(2);
+            this.panel_Content.Name = "panel_Content";
+            this.panel_Content.Size = new System.Drawing.Size(989, 588);
+            this.panel_Content.TabIndex = 5;
             // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.panel2);
             this.panel6.Controls.Add(this.label4);
-            this.panel6.Location = new System.Drawing.Point(292, 499);
+            this.panel6.Location = new System.Drawing.Point(256, 407);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(831, 208);
+            this.panel6.Size = new System.Drawing.Size(727, 146);
             this.panel6.TabIndex = 8;
             // 
             // panel2
@@ -332,10 +332,10 @@
             this.panel2.Controls.Add(this.checkedListBox_ExtendedProgramConfigurationThree);
             this.panel2.Controls.Add(this.checkedListBox_ExtendedProgramConfigurationTwo);
             this.panel2.Controls.Add(this.checkedListBox_ExtendedProgramConfigurationOne);
-            this.panel2.Location = new System.Drawing.Point(2, 40);
+            this.panel2.Location = new System.Drawing.Point(-1, 30);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(824, 163);
+            this.panel2.Size = new System.Drawing.Size(724, 114);
             this.panel2.TabIndex = 5;
             // 
             // checkedListBox_ExtendedProgramConfigurationThree
@@ -350,10 +350,10 @@
             "Show Date On Pause",
             "Reverse Mouse Wheel Zoom",
             "Super Atomic Speed Fighting Action"});
-            this.checkedListBox_ExtendedProgramConfigurationThree.Location = new System.Drawing.Point(544, 37);
+            this.checkedListBox_ExtendedProgramConfigurationThree.Location = new System.Drawing.Point(476, 19);
             this.checkedListBox_ExtendedProgramConfigurationThree.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBox_ExtendedProgramConfigurationThree.Name = "checkedListBox_ExtendedProgramConfigurationThree";
-            this.checkedListBox_ExtendedProgramConfigurationThree.Size = new System.Drawing.Size(256, 88);
+            this.checkedListBox_ExtendedProgramConfigurationThree.Size = new System.Drawing.Size(224, 72);
             this.checkedListBox_ExtendedProgramConfigurationThree.TabIndex = 6;
             this.checkedListBox_ExtendedProgramConfigurationThree.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_ExtendedProgramConfigurationThree_ItemCheck);
             // 
@@ -369,10 +369,10 @@
             "Extra Combat Info",
             "Force Dialog Pause",
             "Enhanced Path Search"});
-            this.checkedListBox_ExtendedProgramConfigurationTwo.Location = new System.Drawing.Point(286, 37);
+            this.checkedListBox_ExtendedProgramConfigurationTwo.Location = new System.Drawing.Point(250, 19);
             this.checkedListBox_ExtendedProgramConfigurationTwo.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBox_ExtendedProgramConfigurationTwo.Name = "checkedListBox_ExtendedProgramConfigurationTwo";
-            this.checkedListBox_ExtendedProgramConfigurationTwo.Size = new System.Drawing.Size(256, 88);
+            this.checkedListBox_ExtendedProgramConfigurationTwo.Size = new System.Drawing.Size(224, 72);
             this.checkedListBox_ExtendedProgramConfigurationTwo.TabIndex = 5;
             this.checkedListBox_ExtendedProgramConfigurationTwo.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_ExtendedProgramConfigurationTwo_ItemCheck);
             // 
@@ -388,10 +388,10 @@
             "UI Edit Mode",
             "Strref On",
             "Disable Footsteps During Combat"});
-            this.checkedListBox_ExtendedProgramConfigurationOne.Location = new System.Drawing.Point(25, 37);
+            this.checkedListBox_ExtendedProgramConfigurationOne.Location = new System.Drawing.Point(22, 19);
             this.checkedListBox_ExtendedProgramConfigurationOne.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBox_ExtendedProgramConfigurationOne.Name = "checkedListBox_ExtendedProgramConfigurationOne";
-            this.checkedListBox_ExtendedProgramConfigurationOne.Size = new System.Drawing.Size(256, 88);
+            this.checkedListBox_ExtendedProgramConfigurationOne.Size = new System.Drawing.Size(224, 72);
             this.checkedListBox_ExtendedProgramConfigurationOne.TabIndex = 4;
             this.checkedListBox_ExtendedProgramConfigurationOne.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_ExtendedProgramConfigurationOne_ItemCheck);
             // 
@@ -402,7 +402,7 @@
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(829, 38);
+            this.label4.Size = new System.Drawing.Size(725, 28);
             this.label4.TabIndex = 3;
             this.label4.Text = "EXTENDED PROGRAM CONFIGURATION";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -412,10 +412,10 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.checkedListBox_MultiplayerOptions);
-            this.panel3.Location = new System.Drawing.Point(7, 498);
+            this.panel3.Location = new System.Drawing.Point(6, 408);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(264, 98);
+            this.panel3.Size = new System.Drawing.Size(231, 73);
             this.panel3.TabIndex = 4;
             // 
             // label9
@@ -425,7 +425,7 @@
             this.label9.Location = new System.Drawing.Point(0, 0);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(262, 38);
+            this.label9.Size = new System.Drawing.Size(229, 28);
             this.label9.TabIndex = 2;
             this.label9.Text = "MULTIPLAYER";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -440,10 +440,10 @@
             this.checkedListBox_MultiplayerOptions.Items.AddRange(new object[] {
             "Disable Banters",
             "Enable Chat Menu"});
-            this.checkedListBox_MultiplayerOptions.Location = new System.Drawing.Point(11, 40);
+            this.checkedListBox_MultiplayerOptions.Location = new System.Drawing.Point(10, 30);
             this.checkedListBox_MultiplayerOptions.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBox_MultiplayerOptions.Name = "checkedListBox_MultiplayerOptions";
-            this.checkedListBox_MultiplayerOptions.Size = new System.Drawing.Size(241, 44);
+            this.checkedListBox_MultiplayerOptions.Size = new System.Drawing.Size(211, 36);
             this.checkedListBox_MultiplayerOptions.TabIndex = 1;
             this.checkedListBox_MultiplayerOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox_MultiplayerOptions_ItemCheck);
             // 
@@ -451,10 +451,10 @@
             // 
             this.panel_GameConfigStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_GameConfigStatus.Controls.Add(this.label_GameConfigNameStatus);
-            this.panel_GameConfigStatus.Location = new System.Drawing.Point(7, 613);
+            this.panel_GameConfigStatus.Location = new System.Drawing.Point(6, 493);
             this.panel_GameConfigStatus.Margin = new System.Windows.Forms.Padding(2);
             this.panel_GameConfigStatus.Name = "panel_GameConfigStatus";
-            this.panel_GameConfigStatus.Size = new System.Drawing.Size(264, 94);
+            this.panel_GameConfigStatus.Size = new System.Drawing.Size(231, 60);
             this.panel_GameConfigStatus.TabIndex = 6;
             // 
             // label_GameConfigNameStatus
@@ -465,7 +465,7 @@
             this.label_GameConfigNameStatus.Location = new System.Drawing.Point(0, 0);
             this.label_GameConfigNameStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_GameConfigNameStatus.Name = "label_GameConfigNameStatus";
-            this.label_GameConfigNameStatus.Size = new System.Drawing.Size(262, 92);
+            this.label_GameConfigNameStatus.Size = new System.Drawing.Size(229, 58);
             this.label_GameConfigNameStatus.TabIndex = 0;
             this.label_GameConfigNameStatus.Text = "CONFIGURATION NOT FOUND";
             this.label_GameConfigNameStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -474,10 +474,10 @@
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(0, 712);
+            this.label3.Location = new System.Drawing.Point(0, 553);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1130, 34);
+            this.label3.Size = new System.Drawing.Size(989, 35);
             this.label3.TabIndex = 5;
             this.label3.Text = "All changes are saved automatically.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -491,8 +491,8 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1130, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(989, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -504,34 +504,34 @@
             this.writeOptimalConfigurationToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
-            this.utilityToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.utilityToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.utilityToolStripMenuItem.Text = "Utility";
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(281, 26);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItem_Click);
             // 
             // extendedConfigurationToolStripMenuItem
             // 
             this.extendedConfigurationToolStripMenuItem.Name = "extendedConfigurationToolStripMenuItem";
-            this.extendedConfigurationToolStripMenuItem.Size = new System.Drawing.Size(281, 26);
+            this.extendedConfigurationToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.extendedConfigurationToolStripMenuItem.Text = "Additional Options";
             this.extendedConfigurationToolStripMenuItem.Click += new System.EventHandler(this.ExtendedConfigurationToolStripMenuItem_Click);
             // 
             // writeOptimalConfigurationToolStripMenuItem
             // 
             this.writeOptimalConfigurationToolStripMenuItem.Name = "writeOptimalConfigurationToolStripMenuItem";
-            this.writeOptimalConfigurationToolStripMenuItem.Size = new System.Drawing.Size(281, 26);
+            this.writeOptimalConfigurationToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.writeOptimalConfigurationToolStripMenuItem.Text = "Write Optimal Configuration";
             this.writeOptimalConfigurationToolStripMenuItem.Click += new System.EventHandler(this.WriteOptimalConfigurationToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(281, 26);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.closeToolStripMenuItem.Text = "Exit";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
             // 
@@ -542,27 +542,27 @@
             this.createToolStripMenuItem,
             this.restoreToolStripMenuItem});
             this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.backupToolStripMenuItem.Text = "Backup";
             // 
             // checkToolStripMenuItem
             // 
             this.checkToolStripMenuItem.Name = "checkToolStripMenuItem";
-            this.checkToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
+            this.checkToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.checkToolStripMenuItem.Text = "Check";
             this.checkToolStripMenuItem.Click += new System.EventHandler(this.CheckToolStripMenuItem_Click);
             // 
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.createToolStripMenuItem.Text = "Create";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.CreateToolStripMenuItem_Click);
             // 
             // restoreToolStripMenuItem
             // 
             this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(142, 26);
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.restoreToolStripMenuItem.Text = "Restore";
             this.restoreToolStripMenuItem.Click += new System.EventHandler(this.RestoreToolStripMenuItem_Click);
             // 
@@ -571,13 +571,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(133, 26);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.AboutToolStripMenuItem1_Click);
             // 
@@ -589,10 +589,10 @@
             // 
             // ConfigWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1134, 748);
-            this.Controls.Add(this.panel5);
+            this.ClientSize = new System.Drawing.Size(992, 592);
+            this.Controls.Add(this.panel_Content);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ConfigWindow";
@@ -600,8 +600,8 @@
             this.panel_GraphicOptions.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.panel_Content.ResumeLayout(false);
+            this.panel_Content.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -625,7 +625,7 @@
         private CheckedListBox checkedListBox_ProgramOptionsTwo;
         private Label label8;
         private CheckedListBox checkedListBox_ProgramOptionsOne;
-        private Panel panel5;
+        private Panel panel_Content;
         private Label label3;
         private Panel panel_GameConfigStatus;
         private Label label_GameConfigNameStatus;
