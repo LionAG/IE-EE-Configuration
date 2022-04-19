@@ -132,10 +132,10 @@
             // 
             this.label_SpeedValueDisplay.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label_SpeedValueDisplay.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label_SpeedValueDisplay.Location = new System.Drawing.Point(0, 88);
+            this.label_SpeedValueDisplay.Location = new System.Drawing.Point(0, 75);
             this.label_SpeedValueDisplay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_SpeedValueDisplay.Name = "label_SpeedValueDisplay";
-            this.label_SpeedValueDisplay.Size = new System.Drawing.Size(239, 20);
+            this.label_SpeedValueDisplay.Size = new System.Drawing.Size(239, 33);
             this.label_SpeedValueDisplay.TabIndex = 5;
             this.label_SpeedValueDisplay.Text = "30 AI Updates / Sec";
             this.label_SpeedValueDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -160,7 +160,7 @@
             this.hScrollBar_GameSpeed.Maximum = 69;
             this.hScrollBar_GameSpeed.Minimum = 15;
             this.hScrollBar_GameSpeed.Name = "hScrollBar_GameSpeed";
-            this.hScrollBar_GameSpeed.Size = new System.Drawing.Size(227, 43);
+            this.hScrollBar_GameSpeed.Size = new System.Drawing.Size(227, 26);
             this.hScrollBar_GameSpeed.TabIndex = 3;
             this.hScrollBar_GameSpeed.Value = 30;
             this.hScrollBar_GameSpeed.ValueChanged += new System.EventHandler(this.HScrollBar_GameSpeed_ValueChanged);
@@ -460,14 +460,14 @@
             // label_GameConfigNameStatus
             // 
             this.label_GameConfigNameStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_GameConfigNameStatus.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_GameConfigNameStatus.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label_GameConfigNameStatus.ForeColor = System.Drawing.Color.Red;
             this.label_GameConfigNameStatus.Location = new System.Drawing.Point(0, 0);
             this.label_GameConfigNameStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_GameConfigNameStatus.Name = "label_GameConfigNameStatus";
             this.label_GameConfigNameStatus.Size = new System.Drawing.Size(262, 92);
             this.label_GameConfigNameStatus.TabIndex = 0;
-            this.label_GameConfigNameStatus.Text = "BG:EE Config Not Found";
+            this.label_GameConfigNameStatus.Text = "CONFIGURATION NOT FOUND";
             this.label_GameConfigNameStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3

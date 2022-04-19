@@ -353,14 +353,14 @@ namespace ConfigUtility.UI
 
                 if (BaldurPropertyManager.ConfigFileExists)
                 {
-                    this.label_GameConfigNameStatus.Text = $"{ShortGameName} Config Found";
+                    this.label_GameConfigNameStatus.Text = $"CONFIGURATION FOUND";
                     this.label_GameConfigNameStatus.ForeColor = Color.LimeGreen;
 
                     this.GameFound?.Invoke(ShortGameName, LongGameName);
                 }
                 else
                 {
-                    this.label_GameConfigNameStatus.Text = $"{ShortGameName} Config Not Found";
+                    this.label_GameConfigNameStatus.Text = $"CONFIGURATION NOT FOUND";
                     this.label_GameConfigNameStatus.ForeColor = Color.Red;
                 }
 
