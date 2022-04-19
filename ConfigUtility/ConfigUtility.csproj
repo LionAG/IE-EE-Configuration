@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <DebugType>portable</DebugType>
+    <DebugType>none</DebugType>
     <Version>$(VersionPrefix)</Version>
     <AssemblyVersion>1.0.3</AssemblyVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
