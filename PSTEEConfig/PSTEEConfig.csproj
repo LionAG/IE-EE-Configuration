@@ -9,6 +9,9 @@
     <ApplicationIcon>config_gear_icon.ico</ApplicationIcon>
     <PackageIcon>config_gear.png</PackageIcon>
     <DebugType>none</DebugType>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>false</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
   </PropertyGroup>
 
   <ItemGroup>
