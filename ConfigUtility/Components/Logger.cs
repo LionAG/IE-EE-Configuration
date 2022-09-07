@@ -27,16 +27,16 @@ namespace ConfigUtility.Components
 
         public static string GetLine(string msg, LogType logType)
         {
-            string? ECName; // Name of the enumeration constant
+            string? ecName; // Name of the enumeration constant
 
-            if ((ECName = Enum.GetName(logType.GetType(), logType)) != null)
+            if ((ecName = Enum.GetName(logType.GetType(), logType)) != null)
             {
-                var TypeName = ECName.ToString().ToUpper();
+                var typeName = ecName.ToString().ToUpper();
 
                 if (IncludeTimestamp)
-                    return msg.Insert(0, $"[{DateTime.Now}] [{TypeName}]");
+                    return msg.Insert(0, $"[{DateTime.Now}] [{typeName}]");
 
-                return $"[{TypeName}] {msg}";
+                return $"[{typeName}] {msg}";
             }
 
             return msg;

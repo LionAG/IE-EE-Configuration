@@ -154,128 +154,45 @@ namespace ConfigUtility.UI
         {
             if (BaldurPropertyManager is not null && BaldurPropertyManager.ConfigFileExists)
             {
-                // Update game speed section
+                // Update game speed
 
-                Int32 GameSpeed = 30;
+                int gameSpeed = 30;
 
                 if (BaldurPropertyManager.GetProperty("Maximum Frame Rate", out var Speed))
                 {
-                    GameSpeed = Convert.ToInt32(Speed);
+                    gameSpeed = Convert.ToInt32(Speed);
                 }
 
-                this.hScrollBar_GameSpeed.Value = GameSpeed;
-                this.label_SpeedValueDisplay.Text = $"{GameSpeed} AI Updates / Sec";
+                this.hScrollBar_GameSpeed.Value = gameSpeed;
+                this.label_SpeedValueDisplay.Text = $"{gameSpeed} AI Updates / Sec";
 
-                // Update the graphics section
+                // Update the blocks
 
-                foreach (var PropertyString in Graphics_Properties)
+                Dictionary<CheckedListBox, Dictionary<int, string>> blocks = new()
                 {
-                    bool status = false;
+                    { checkedListBox_GraphicOptions, Graphics_Properties },
+                    { checkedListBox_MultiplayerOptions, Multiplayer_Properties },
+                    { checkedListBox_ProgramOptionsOne, ProgramOptionsOne_Properties },
+                    { checkedListBox_ProgramOptionsTwo, ProgramOptionsTwo_Properties },
+                    { checkedListBox_ProgramOptionsThree, ProgramOptionsThree_Properties },
+                    { checkedListBox_ExtendedProgramConfigurationOne, ProgramOptionsExtendedOne_Properties},
+                    { checkedListBox_ExtendedProgramConfigurationTwo, ProgramOptionsExtendedTwo_Properties},
+                    { checkedListBox_ExtendedProgramConfigurationThree, ProgramOptionsExtendedThree_Properties }
+                };
 
-                    if (BaldurPropertyManager.GetProperty(BaldurPropertyManager.GetPropertyName(PropertyString.Value), out var Value))
-                    {
-                        status = Convert.ToBoolean(Convert.ToInt16(Value));
-                    }
-
-                    checkedListBox_GraphicOptions.SetItemChecked(PropertyString.Key, status);
-                }
-
-                // Update multiplayer section
-
-                foreach (var PropertyString in Multiplayer_Properties)
+                foreach (var block in blocks)
                 {
-                    bool status = false;
-
-                    if (BaldurPropertyManager.GetProperty(BaldurPropertyManager.GetPropertyName(PropertyString.Value), out var Value))
+                    foreach (var propertyString in block.Value)
                     {
-                        status = Convert.ToBoolean(Convert.ToInt16(Value));
+                        bool status = false;
+
+                        if (BaldurPropertyManager.GetProperty(BaldurPropertyManager.GetPropertyName(propertyString.Value), out var value))
+                        {
+                            status = Convert.ToBoolean(Convert.ToInt16(value));
+                        }
+
+                        block.Key.SetItemChecked(propertyString.Key, status);
                     }
-
-                    checkedListBox_MultiplayerOptions.SetItemChecked(PropertyString.Key, status);
-                }
-
-                // Update program section - first block
-
-                foreach (var PropertyString in ProgramOptionsOne_Properties)
-                {
-                    bool status = false;
-
-                    if (BaldurPropertyManager.GetProperty(BaldurPropertyManager.GetPropertyName(PropertyString.Value), out var Value))
-                    {
-                        status = Convert.ToBoolean(Convert.ToInt16(Value));
-                    }
-
-                    checkedListBox_ProgramOptionsOne.SetItemChecked(PropertyString.Key, status);
-                }
-
-                // Update program section - second block
-
-                foreach (var PropertyString in ProgramOptionsTwo_Properties)
-                {
-                    bool status = false;
-
-                    if (BaldurPropertyManager.GetProperty(BaldurPropertyManager.GetPropertyName(PropertyString.Value), out var Value))
-                    {
-                        status = Convert.ToBoolean(Convert.ToInt16(Value));
-                    }
-
-                    checkedListBox_ProgramOptionsTwo.SetItemChecked(PropertyString.Key, status);
-                }
-
-                // Update program section - third block
-
-                foreach (var PropertyString in ProgramOptionsThree_Properties)
-                {
-                    bool status = false;
-
-                    if (BaldurPropertyManager.GetProperty(BaldurPropertyManager.GetPropertyName(PropertyString.Value), out var Value))
-                    {
-                        status = Convert.ToBoolean(Convert.ToInt16(Value));
-                    }
-
-                    checkedListBox_ProgramOptionsThree.SetItemChecked(PropertyString.Key, status);
-                }
-
-                // Update extended program section - first block
-
-                foreach (var PropertyString in ProgramOptionsExtendedOne_Properties)
-                {
-                    bool status = false;
-
-                    if (BaldurPropertyManager.GetProperty(BaldurPropertyManager.GetPropertyName(PropertyString.Value), out var Value))
-                    {
-                        status = Convert.ToBoolean(Convert.ToInt16(Value));
-                    }
-
-                    checkedListBox_ExtendedProgramConfigurationOne.SetItemChecked(PropertyString.Key, status);
-                }
-
-                // Update extended program section - second block
-
-                foreach (var PropertyString in ProgramOptionsExtendedTwo_Properties)
-                {
-                    bool status = false;
-
-                    if (BaldurPropertyManager.GetProperty(BaldurPropertyManager.GetPropertyName(PropertyString.Value), out var Value))
-                    {
-                        status = Convert.ToBoolean(Convert.ToInt16(Value));
-                    }
-
-                    checkedListBox_ExtendedProgramConfigurationTwo.SetItemChecked(PropertyString.Key, status);
-                }
-
-                // Update extended program section - second block
-
-                foreach (var PropertyString in ProgramOptionsExtendedThree_Properties)
-                {
-                    bool status = false;
-
-                    if (BaldurPropertyManager.GetProperty(BaldurPropertyManager.GetPropertyName(PropertyString.Value), out var Value))
-                    {
-                        status = Convert.ToBoolean(Convert.ToInt16(Value));
-                    }
-
-                    checkedListBox_ExtendedProgramConfigurationThree.SetItemChecked(PropertyString.Key, status);
                 }
             }
         }
@@ -284,16 +201,16 @@ namespace ConfigUtility.UI
         {
             try
             {
-                var BasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                var basePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
                                             LongGameName,
                                             ConfigFileName);
 
-                if (BasePath is not null && File.Exists(BasePath))
+                if (File.Exists(basePath))
                 {
-                    return BasePath;
+                    return basePath;
                 }
 
-                Msg.Information($"Please point me to the location of your {ConfigFileName} file.");
+                Msg.Information($"Please select your {ConfigFileName} file.");
 
                 if (openFileDialog_SelectGameConfig.ShowDialog() == DialogResult.OK)
                 {
@@ -313,13 +230,13 @@ namespace ConfigUtility.UI
 
         private void HScrollBar_GameSpeed_ValueChanged(object sender, EventArgs e)
         {
-            var SelectedSpeedValue = ((HScrollBar)sender).Value.ToString();
+            var selectedSpeedValue = ((HScrollBar)sender).Value.ToString();
 
             // Update UI
-            this.label_SpeedValueDisplay.Text = $"{SelectedSpeedValue} AI Updates / Sec";
+            this.label_SpeedValueDisplay.Text = $"{selectedSpeedValue} AI Updates / Sec";
 
             // Update value
-            this.BaldurPropertyManager?.SetProperty("Program Options", "Maximum Frame Rate", SelectedSpeedValue);
+            this.BaldurPropertyManager?.SetProperty("Program Options", "Maximum Frame Rate", selectedSpeedValue);
         }
 
         private void ConfigWindow_Load(object sender, EventArgs e)
@@ -330,7 +247,7 @@ namespace ConfigUtility.UI
             }
             else
             {
-                this.Config.BaldurLuaPath = LocateGameConfig();
+                Config.BaldurLuaPath = LocateGameConfig();
                 ApplicationConfiguration.Write(Config);
             }
 
@@ -343,25 +260,25 @@ namespace ConfigUtility.UI
             }
             else
             {
-                this.ConfigBackupManager = new(this.Config.BaldurLuaPath, "Configuration");
-                this.BaldurPropertyManager = new(this.Config.BaldurLuaPath);
+                ConfigBackupManager = new(this.Config.BaldurLuaPath, "Configuration");
+                BaldurPropertyManager = new(this.Config.BaldurLuaPath);
 
-                this.Text = $"{LongGameName} - Configuration";
+                Text = $"{LongGameName} - Configuration";
 
-                this.GameFound += ConfigWindow_GameFound;
-                this.UtilityClosed += ConfigWindow_UtilityClosed;
+                GameFound += ConfigWindow_GameFound;
+                UtilityClosed += ConfigWindow_UtilityClosed;
 
                 if (BaldurPropertyManager.ConfigFileExists)
                 {
-                    this.label_GameConfigNameStatus.Text = $"CONFIGURATION FOUND";
-                    this.label_GameConfigNameStatus.ForeColor = Color.Green;
+                    label_GameConfigNameStatus.Text = $"CONFIGURATION FOUND";
+                    label_GameConfigNameStatus.ForeColor = Color.Green;
 
-                    this.GameFound?.Invoke(ShortGameName, LongGameName);
+                    GameFound?.Invoke(ShortGameName, LongGameName);
                 }
                 else
                 {
-                    this.label_GameConfigNameStatus.Text = $"CONFIGURATION NOT FOUND";
-                    this.label_GameConfigNameStatus.ForeColor = Color.Red;
+                    label_GameConfigNameStatus.Text = $"CONFIGURATION NOT FOUND";
+                    label_GameConfigNameStatus.ForeColor = Color.Red;
                 }
 
                 if (!ConfigBackupManager.BackupExists)
@@ -399,40 +316,40 @@ namespace ConfigUtility.UI
 
         private void CheckedListBox_GraphicOptions_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (BaldurPropertyManager is not null && Graphics_Properties.TryGetValue(e.Index, out var S))
-                BaldurPropertyManager.SetBoolean(S, e.NewValue == CheckState.Checked);
+            if (BaldurPropertyManager is not null && Graphics_Properties.TryGetValue(e.Index, out var s))
+                BaldurPropertyManager.SetBoolean(s, e.NewValue == CheckState.Checked);
 
             UITools.ResetSelectedIndex((CheckedListBox)sender);
         }
 
         private void CheckedListBox_MultiplayerOptions_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (BaldurPropertyManager is not null && Multiplayer_Properties.TryGetValue(e.Index, out var S))
-                BaldurPropertyManager.SetBoolean(S, e.NewValue == CheckState.Checked);
+            if (BaldurPropertyManager is not null && Multiplayer_Properties.TryGetValue(e.Index, out var s))
+                BaldurPropertyManager.SetBoolean(s, e.NewValue == CheckState.Checked);
 
             UITools.ResetSelectedIndex((CheckedListBox)sender);
         }
 
         private void CheckedListBox_ProgramOptionsOne_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (BaldurPropertyManager is not null && ProgramOptionsOne_Properties.TryGetValue(e.Index, out var S))
-                BaldurPropertyManager.SetBoolean(S, e.NewValue == CheckState.Checked);
+            if (BaldurPropertyManager is not null && ProgramOptionsOne_Properties.TryGetValue(e.Index, out var s))
+                BaldurPropertyManager.SetBoolean(s, e.NewValue == CheckState.Checked);
 
             UITools.ResetSelectedIndex((CheckedListBox)sender);
         }
 
         private void CheckedListBox_ProgramOptionsTwo_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (BaldurPropertyManager is not null && ProgramOptionsTwo_Properties.TryGetValue(e.Index, out var S))
-                BaldurPropertyManager.SetBoolean(S, e.NewValue == CheckState.Checked);
+            if (BaldurPropertyManager is not null && ProgramOptionsTwo_Properties.TryGetValue(e.Index, out var s))
+                BaldurPropertyManager.SetBoolean(s, e.NewValue == CheckState.Checked);
 
             UITools.ResetSelectedIndex((CheckedListBox)sender);
         }
 
         private void CheckedListBox_ProgramOptionsThree_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (BaldurPropertyManager is not null && ProgramOptionsThree_Properties.TryGetValue(e.Index, out var S))
-                BaldurPropertyManager.SetBoolean(S, e.NewValue == CheckState.Checked);
+            if (BaldurPropertyManager is not null && ProgramOptionsThree_Properties.TryGetValue(e.Index, out var s))
+                BaldurPropertyManager.SetBoolean(s, e.NewValue == CheckState.Checked);
 
             UITools.ResetSelectedIndex((CheckedListBox)sender);
         }
@@ -493,8 +410,8 @@ namespace ConfigUtility.UI
         {
             if (ConfigBackupManager.BackupExists)
             {
-                var CT = File.GetCreationTime(ConfigBackupManager.BackupFilePath);
-                Msg.Information($"Backup file for {ShortGameName} exists!\n\nCreated at: {CT}", "Backup Status");
+                var creationTime = File.GetCreationTime(ConfigBackupManager.BackupFilePath);
+                Msg.Information($"Backup file for {ShortGameName} exists!\n\nCreated at: {creationTime}", "Backup Status");
             }
             else
             {
@@ -504,30 +421,29 @@ namespace ConfigUtility.UI
 
         private void AboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var About = new AboutWindow();
-            About.ShowDialog();
+            new AboutWindow().ShowDialog();
         }
 
         private void CheckedListBox_ExtendedProgramConfigurationOne_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (BaldurPropertyManager is not null && ProgramOptionsExtendedOne_Properties.TryGetValue(e.Index, out var S))
-                BaldurPropertyManager.SetBoolean(S, e.NewValue == CheckState.Checked);
+            if (BaldurPropertyManager is not null && ProgramOptionsExtendedOne_Properties.TryGetValue(e.Index, out var s))
+                BaldurPropertyManager.SetBoolean(s, e.NewValue == CheckState.Checked);
 
             UITools.ResetSelectedIndex((CheckedListBox)sender);
         }
 
         private void CheckedListBox_ExtendedProgramConfigurationTwo_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (BaldurPropertyManager is not null && ProgramOptionsExtendedTwo_Properties.TryGetValue(e.Index, out var S))
-                BaldurPropertyManager.SetBoolean(S, e.NewValue == CheckState.Checked);
+            if (BaldurPropertyManager is not null && ProgramOptionsExtendedTwo_Properties.TryGetValue(e.Index, out var s))
+                BaldurPropertyManager.SetBoolean(s, e.NewValue == CheckState.Checked);
 
             UITools.ResetSelectedIndex((CheckedListBox)sender);
         }
 
         private void CheckedListBox_ExtendedProgramConfigurationThree_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (BaldurPropertyManager is not null && ProgramOptionsExtendedThree_Properties.TryGetValue(e.Index, out var S))
-                BaldurPropertyManager.SetBoolean(S, e.NewValue == CheckState.Checked);
+            if (BaldurPropertyManager is not null && ProgramOptionsExtendedThree_Properties.TryGetValue(e.Index, out var s))
+                BaldurPropertyManager.SetBoolean(s, e.NewValue == CheckState.Checked);
 
             UITools.ResetSelectedIndex((CheckedListBox)sender);
         }

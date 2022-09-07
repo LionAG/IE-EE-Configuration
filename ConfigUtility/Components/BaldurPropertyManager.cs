@@ -6,52 +6,52 @@
 
         public bool ConfigFileExists => File.Exists(LuaFilePath);
 
-        public BaldurPropertyManager(string LuaFilePath)
+        public BaldurPropertyManager(string luaFilePath)
         {
-            if (string.IsNullOrEmpty(LuaFilePath))
+            if (string.IsNullOrEmpty(luaFilePath))
             {
-                throw new ArgumentException($"'{nameof(LuaFilePath)}' cannot be null or empty.", nameof(LuaFilePath));
+                throw new ArgumentException($"'{nameof(luaFilePath)}' cannot be null or empty.", nameof(luaFilePath));
             }
 
-            if (!File.Exists(LuaFilePath))
+            if (!File.Exists(luaFilePath))
             {
-                throw new FileNotFoundException($"{LuaFilePath} - file does not exist.");
+                throw new FileNotFoundException($"{luaFilePath} - file does not exist.");
             }
 
-            this.LuaFilePath = LuaFilePath;
+            this.LuaFilePath = luaFilePath;
         }
 
-        private static string CreateEntry(string Section, string Property, string Value)
+        private static string CreateEntry(string section, string property, string value)
         {
-            return $"SetPrivateProfileString('{Section}','{Property}','{Value}')";
+            return $"SetPrivateProfileString('{section}','{property}','{value}')";
         }
 
-        public bool SetProperty(string Section, string PropertyName, string Value)
+        public bool SetProperty(string section, string propertyName, string value)
         {
             if (ConfigFileExists)
             {
                 try
                 {
-                    var ConfigContent = new List<string>(File.ReadAllLines(LuaFilePath));
-                    var Line = ConfigContent.Find(l => l.Contains(PropertyName));
+                    var configContent = new List<string>(File.ReadAllLines(LuaFilePath));
+                    var line = configContent.Find(l => l.Contains(propertyName));
 
-                    if (Line is null)
+                    if (line is null)
                     {
-                        ConfigContent.Insert(ConfigContent.Count, CreateEntry(Section, PropertyName, Value));
+                        configContent.Insert(configContent.Count, CreateEntry(section, propertyName, value));
                     }
                     else
                     {
-                        var S = Line.Split(',');
-                        var ValueStr = $"'{Value}')";
+                        var s = line.Split(',');
+                        var valueStr = $"'{value}')";
 
-                        var LineIndex = ConfigContent.IndexOf(Line);
-                        var ModifiedLine = $"{S[0]},{S[1]},{ValueStr}";
+                        var lineIndex = configContent.IndexOf(line);
+                        var modifiedLine = $"{s[0]},{s[1]},{valueStr}";
 
-                        ConfigContent.Remove(Line); // Remove line
-                        ConfigContent.Insert(LineIndex, ModifiedLine);  // Insert modified line
+                        configContent.Remove(line); // Remove line
+                        configContent.Insert(lineIndex, modifiedLine);  // Insert modified line
                     }
 
-                    File.WriteAllLines(this.LuaFilePath, ConfigContent);
+                    File.WriteAllLines(this.LuaFilePath, configContent);
                     return true;
                 }
                 catch (Exception ex)
@@ -66,21 +66,21 @@
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="PropertyName"></param>
-        /// <param name="Value"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="value"></param>
         /// <returns>Property value or "Not found" string</returns>
-        public bool GetProperty(string PropertyName, out string Value)
+        public bool GetProperty(string propertyName, out string value)
         {
             if (ConfigFileExists)
             {
                 try
                 {
-                    var ConfigContent = new List<string>(File.ReadAllLines(LuaFilePath));
-                    var Line = ConfigContent.Find(l => l.Contains(PropertyName));
+                    var configContent = new List<string>(File.ReadAllLines(LuaFilePath));
+                    var line = configContent.Find(l => l.Contains(propertyName));
 
-                    if (Line != null)
+                    if (line != null)
                     {
-                        Value = Line.Split(',')[2].Replace("'", "").Replace(")", "");
+                        value = line.Split(',')[2].Replace("'", "").Replace(")", "");
                         return true;
                     }
                 }
@@ -90,22 +90,22 @@
                 }
             }
 
-            Value = "Not found";
+            value = "Not found";
             return false;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="PropertyString">eg. "Graphics,Scale UI"</param>
+        /// <param name="propertyString">eg. "Graphics,Scale UI"</param>
         /// <param name="value">Value to set</param>
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
-        public bool SetByPropertyString(string PropertyString, string value)
+        public bool SetByPropertyString(string propertyString, string value)
         {
-            if (string.IsNullOrEmpty(PropertyString))
+            if (string.IsNullOrEmpty(propertyString))
             {
-                throw new ArgumentException($"'{nameof(PropertyString)}' cannot be null or empty.", nameof(PropertyString));
+                throw new ArgumentException($"'{nameof(propertyString)}' cannot be null or empty.", nameof(propertyString));
             }
 
             if (string.IsNullOrEmpty(value))
@@ -113,46 +113,46 @@
                 throw new ArgumentException($"'{nameof(value)}' cannot be null or empty.", nameof(value));
             }
 
-            var Section = GetSectionName(PropertyString);
-            var Property = GetPropertyName(PropertyString);
+            var section = GetSectionName(propertyString);
+            var property = GetPropertyName(propertyString);
 
-            return this.SetProperty(Section, Property, value);
+            return this.SetProperty(section, property, value);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="PropertyString">eg. "Graphics,Scale UI"</param>
-        /// <param name="Value"></param>
+        /// <param name="propertyString">eg. "Graphics,Scale UI"</param>
+        /// <param name="value"></param>
         /// <returns></returns>
-        public bool SetBoolean(string PropertyString, bool Value)
+        public bool SetBoolean(string propertyString, bool value)
         {
-            if (string.IsNullOrEmpty(PropertyString))
+            if (string.IsNullOrEmpty(propertyString))
             {
                 return false;
             }
 
-            return SetByPropertyString(PropertyString, Value ? "1" : "0");
+            return SetByPropertyString(propertyString, value ? "1" : "0");
         }
 
         /// <summary>
         /// Pass a string eg. "Graphics,Scale UI" -> will return "Graphics"
         /// </summary>
-        /// <param name="PropertyString"></param>
+        /// <param name="propertyString"></param>
         /// <returns></returns>
-        public static string GetSectionName(string PropertyString)
+        public static string GetSectionName(string propertyString)
         {
-            return PropertyString.Split(',')[0];
+            return propertyString.Split(',')[0];
         }
 
         /// <summary>
         /// Pass a string eg. "Graphics,Scale UI" -> will return "Scale UI"
         /// </summary>
-        /// <param name="PropertyString"></param>
+        /// <param name="propertyString"></param>
         /// <returns></returns>
-        public static string GetPropertyName(string PropertyString)
+        public static string GetPropertyName(string propertyString)
         {
-            return PropertyString.Split(',')[1];
+            return propertyString.Split(',')[1];
         }
     }
 }

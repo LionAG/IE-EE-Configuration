@@ -4,19 +4,18 @@
     {
         private string LuaConfigFilePath { get; init; }
         private string GameIdentifier { get; init; }
-
         public bool BackupExists => File.Exists(BackupFilePath);
 
         public string BackupFilePath
         {
             get
             {
-                var BackupFolderPath = Path.Combine(Application.StartupPath, "Backup");
+                var backupFolderPath = Path.Combine(Application.StartupPath, "Backup");
 
-                if (!Directory.Exists(BackupFolderPath))
-                    Directory.CreateDirectory(BackupFolderPath);
+                if (!Directory.Exists(backupFolderPath))
+                    Directory.CreateDirectory(backupFolderPath);
 
-                return Path.Combine(BackupFolderPath, $"{GameIdentifier}.lua.backup");
+                return Path.Combine(backupFolderPath, $"{GameIdentifier}.lua.backup");
             }
         }
 
@@ -36,17 +35,17 @@
             this.GameIdentifier = GameIdentifier;
         }
 
-        public bool CreateBackup(string? SaveLocation = null, bool Overwrite = true)
+        public bool CreateBackup(string? saveLocation = null, bool overwrite = true)
         {
             try
             {
-                if (string.IsNullOrEmpty(SaveLocation))
+                if (string.IsNullOrEmpty(saveLocation))
                 {
-                    SaveLocation = BackupFilePath;
+                    saveLocation = BackupFilePath;
                 }
 
                 if (File.Exists(LuaConfigFilePath))
-                    File.Copy(LuaConfigFilePath, SaveLocation, Overwrite);
+                    File.Copy(LuaConfigFilePath, saveLocation, overwrite);
 
                 return true;
             }
@@ -57,19 +56,19 @@
             }
         }
 
-        public bool RestoreBackup(string? SourceLocation = null)
+        public bool RestoreBackup(string? sourceLocation = null)
         {
             try
             {
-                if (string.IsNullOrEmpty(SourceLocation))
+                if (string.IsNullOrEmpty(sourceLocation))
                 {
-                    SourceLocation = BackupFilePath;
+                    sourceLocation = BackupFilePath;
                 }
 
-                if (File.Exists(SourceLocation) == false)
+                if (File.Exists(sourceLocation) == false)
                     return false;
 
-                File.Copy(SourceLocation, LuaConfigFilePath, true);
+                File.Copy(sourceLocation, LuaConfigFilePath, true);
 
                 return true;
             }

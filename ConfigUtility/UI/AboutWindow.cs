@@ -24,7 +24,7 @@ namespace ConfigUtility.UI
 
         private void AboutWindow_Load(object sender, EventArgs e)
         {
-            this.label_Version.Text = $"v{AssemblyVersion}";
+            label_Version.Text = $"v{AssemblyVersion}";
         }
     }
 }
