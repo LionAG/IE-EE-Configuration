@@ -49,9 +49,10 @@
             this.panel1.Controls.Add(this.panelAboutContent);
             this.panel1.Controls.Add(this.panelAboutHeader);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(15, 17);
+            this.panel1.Location = new System.Drawing.Point(10, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(695, 388);
+            this.panel1.Size = new System.Drawing.Size(488, 233);
             this.panel1.TabIndex = 0;
             // 
             // panelAboutContent
@@ -59,9 +60,10 @@
             this.panelAboutContent.Controls.Add(this.panelText);
             this.panelAboutContent.Controls.Add(this.label4);
             this.panelAboutContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAboutContent.Location = new System.Drawing.Point(0, 148);
+            this.panelAboutContent.Location = new System.Drawing.Point(0, 89);
+            this.panelAboutContent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelAboutContent.Name = "panelAboutContent";
-            this.panelAboutContent.Size = new System.Drawing.Size(695, 240);
+            this.panelAboutContent.Size = new System.Drawing.Size(488, 144);
             this.panelAboutContent.TabIndex = 4;
             // 
             // panelText
@@ -70,8 +72,9 @@
             this.panelText.Controls.Add(this.label3);
             this.panelText.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelText.Location = new System.Drawing.Point(0, 0);
+            this.panelText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelText.Name = "panelText";
-            this.panelText.Size = new System.Drawing.Size(695, 188);
+            this.panelText.Size = new System.Drawing.Size(488, 113);
             this.panelText.TabIndex = 4;
             // 
             // label2
@@ -79,8 +82,9 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(695, 137);
+            this.label2.Size = new System.Drawing.Size(488, 82);
             this.label2.TabIndex = 0;
             this.label2.Text = "This is an unofficial configuration utility for IE:EE games.\r\nAllows for changing" +
     " many of the properties changeable through the Baldur.lua file.\r\n\r\nIcons provide" +
@@ -91,20 +95,22 @@
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(0, 137);
+            this.label3.Location = new System.Drawing.Point(0, 82);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(695, 51);
+            this.label3.Size = new System.Drawing.Size(488, 31);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Created by silver_eagle.";
+            this.label3.Text = "Created by Nesae.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(0, 177);
+            this.label4.Location = new System.Drawing.Point(0, 106);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(695, 63);
+            this.label4.Size = new System.Drawing.Size(488, 38);
             this.label4.TabIndex = 2;
             this.label4.Text = "Special thanks to: CamDawg, skellytz, Bubb && Sam. for help during development.";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -115,8 +121,9 @@
             this.panelAboutHeader.Controls.Add(this.label1);
             this.panelAboutHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAboutHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelAboutHeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelAboutHeader.Name = "panelAboutHeader";
-            this.panelAboutHeader.Size = new System.Drawing.Size(695, 148);
+            this.panelAboutHeader.Size = new System.Drawing.Size(488, 89);
             this.panelAboutHeader.TabIndex = 3;
             // 
             // roundPictureBox1
@@ -125,8 +132,9 @@
             this.roundPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.roundPictureBox1.Image = global::ConfigUtility.Properties.Resources.config_gear;
             this.roundPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.roundPictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.roundPictureBox1.Name = "roundPictureBox1";
-            this.roundPictureBox1.Size = new System.Drawing.Size(146, 148);
+            this.roundPictureBox1.Size = new System.Drawing.Size(102, 89);
             this.roundPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.roundPictureBox1.TabIndex = 1;
             this.roundPictureBox1.TabStop = false;
@@ -135,9 +143,10 @@
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Right;
             this.label1.Font = new System.Drawing.Font("Cascadia Mono", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(152, 0);
+            this.label1.Location = new System.Drawing.Point(108, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(543, 148);
+            this.label1.Size = new System.Drawing.Size(380, 89);
             this.label1.TabIndex = 2;
             this.label1.Text = "Infinity Engine - Enhanced Edition Configuration Utility";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -146,24 +155,25 @@
             // 
             this.label_Version.AutoSize = true;
             this.label_Version.Font = new System.Drawing.Font("Cascadia Mono", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label_Version.Location = new System.Drawing.Point(658, 396);
+            this.label_Version.Location = new System.Drawing.Point(461, 238);
+            this.label_Version.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_Version.Name = "label_Version";
-            this.label_Version.Size = new System.Drawing.Size(56, 18);
+            this.label_Version.Size = new System.Drawing.Size(43, 13);
             this.label_Version.TabIndex = 3;
             this.label_Version.Text = "v1.0.0";
             // 
             // AboutWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 422);
+            this.ClientSize = new System.Drawing.Size(508, 253);
             this.Controls.Add(this.label_Version);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MinimizeBox = false;
             this.Name = "AboutWindow";
-            this.Padding = new System.Windows.Forms.Padding(15, 17, 15, 17);
+            this.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "About";
