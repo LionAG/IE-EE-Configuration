@@ -8,19 +8,17 @@ namespace ConfigUtility.UI
     public partial class ConfigWindow : BaseWindow
     {
         private ApplicationConfigurationData Config = new();
-        private string ConfigFileName => "Baldur.lua";
 
+        private string ConfigFileName => "Baldur.lua";
         public string ShortGameName { get; init; }
         public string LongGameName { get; init; }
 
         private ConfigBackupManager ConfigBackupManager { get; set; }
-        private bool FullBackupExists => this.ConfigBackupManager.BackupExists;
+        private BaldurPropertyManager BaldurPropertyManager { get; set; }
 
         public event GameFoundHandler? GameFound;
         public event UtilityClosedHandler? UtilityClosed;
 
-        private BaldurPropertyManager BaldurPropertyManager { get; set; }
-        private bool LuaConfigAvailable => BaldurPropertyManager.ConfigFileExists;
 
         readonly Dictionary<int, string> Graphics_Properties = new()
         {
@@ -146,13 +144,15 @@ namespace ConfigUtility.UI
 
         private bool BackupConfiguration(bool Overwrite)
         {
-            if (LuaConfigAvailable) return this.ConfigBackupManager.CreateBackup(null, Overwrite);
+            if (BaldurPropertyManager.ConfigFileExists)
+                return ConfigBackupManager.CreateBackup(null, Overwrite);
+            
             return false;
         }
 
         private void UpdateUI()
         {
-            if (BaldurPropertyManager is not null && LuaConfigAvailable)
+            if (BaldurPropertyManager is not null && BaldurPropertyManager.ConfigFileExists)
             {
                 // Update game speed section
 
@@ -364,7 +364,7 @@ namespace ConfigUtility.UI
                     this.label_GameConfigNameStatus.ForeColor = Color.Red;
                 }
 
-                if (!FullBackupExists)
+                if (!ConfigBackupManager.BackupExists)
                 {
                     // Do not overwrite any existing backups on load
 
@@ -444,7 +444,7 @@ namespace ConfigUtility.UI
 
         private void RefreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (LuaConfigAvailable)
+            if (BaldurPropertyManager.ConfigFileExists)
             {
                 this.UpdateUI();
                 Msg.Information("Option status has been refreshed!");
