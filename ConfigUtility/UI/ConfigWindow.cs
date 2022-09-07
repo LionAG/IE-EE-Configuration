@@ -1,4 +1,5 @@
 using ConfigUtility.Components;
+using System.Diagnostics;
 
 namespace ConfigUtility.UI
 {
@@ -481,6 +482,15 @@ namespace ConfigUtility.UI
         private void ExtendedConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AdditionalOptions(this.BaldurPropertyManager).ShowDialog();
+        }
+
+        private void OpenGitHubToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo()
+            {
+                UseShellExecute = true,
+                FileName = "https://github.com/Nesae-avi/IE-EE-Configuration"
+            });
         }
     }
 }

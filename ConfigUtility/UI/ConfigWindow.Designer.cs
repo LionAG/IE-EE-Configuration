@@ -66,6 +66,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog_SelectGameConfig = new System.Windows.Forms.OpenFileDialog();
+            this.openGitHubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_GraphicOptions.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -548,27 +549,28 @@
             // checkToolStripMenuItem
             // 
             this.checkToolStripMenuItem.Name = "checkToolStripMenuItem";
-            this.checkToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.checkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkToolStripMenuItem.Text = "Check";
             this.checkToolStripMenuItem.Click += new System.EventHandler(this.CheckToolStripMenuItem_Click);
             // 
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.createToolStripMenuItem.Text = "Create";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.CreateToolStripMenuItem_Click);
             // 
             // restoreToolStripMenuItem
             // 
             this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.restoreToolStripMenuItem.Text = "Restore";
             this.restoreToolStripMenuItem.Click += new System.EventHandler(this.RestoreToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openGitHubToolStripMenuItem,
             this.aboutToolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -577,7 +579,7 @@
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.AboutToolStripMenuItem1_Click);
             // 
@@ -586,6 +588,13 @@
             this.openFileDialog_SelectGameConfig.DefaultExt = "ini";
             this.openFileDialog_SelectGameConfig.FileName = "Baldur.lua";
             this.openFileDialog_SelectGameConfig.Filter = "Lua Files|*.lua";
+            // 
+            // openGitHubToolStripMenuItem
+            // 
+            this.openGitHubToolStripMenuItem.Name = "openGitHubToolStripMenuItem";
+            this.openGitHubToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openGitHubToolStripMenuItem.Text = "Open GitHub";
+            this.openGitHubToolStripMenuItem.Click += new System.EventHandler(this.OpenGitHubToolStripMenuItem_Click);
             // 
             // ConfigWindow
             // 
@@ -652,5 +661,6 @@
         private CheckedListBox checkedListBox_ExtendedProgramConfigurationTwo;
         private CheckedListBox checkedListBox_ExtendedProgramConfigurationThree;
         private OpenFileDialog openFileDialog_SelectGameConfig;
+        private ToolStripMenuItem openGitHubToolStripMenuItem;
     }
 }
