@@ -143,14 +143,14 @@
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Consolas", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.label2.Size = new System.Drawing.Size(209, 22);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Game Speed";
+            this.label2.Text = "GAME SPEED";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // hScrollBar_GameSpeed
