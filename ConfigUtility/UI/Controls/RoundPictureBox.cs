@@ -9,9 +9,9 @@ namespace ConfigUtility.UI.Controls
             base.OnResize(e);
 
             using var graphicsPath = new GraphicsPath();
-
             graphicsPath.AddEllipse(new Rectangle(0, 0, this.Width - 1, this.Height - 1));
-            this.Region = new Region(graphicsPath);
+
+            Region = new Region(graphicsPath);
         }
     }
 }
