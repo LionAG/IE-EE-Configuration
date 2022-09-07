@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace ConfigUtility.Components
 {
     [Serializable]
     public class ApplicationConfigurationData
     {
-        public string? BaldurLuaPath { get;set; }
+        public string? BaldurLuaPath { get; set; }
         public DateTime TimeSaved { get; set; } = DateTime.Now;
     }
 
@@ -20,7 +15,7 @@ namespace ConfigUtility.Components
         {
             get
             {
-                if(!Directory.Exists("Data"))
+                if (!Directory.Exists("Data"))
                     Directory.CreateDirectory("Data");
 
                 return $@"Data\{nameof(ApplicationConfiguration)}.xml";
@@ -59,7 +54,7 @@ namespace ConfigUtility.Components
 
                 configurationData = (ApplicationConfigurationData)Serializer.Deserialize(Reader);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Logger.LogLine(ex.Message, LogType.Exception);
                 return false;

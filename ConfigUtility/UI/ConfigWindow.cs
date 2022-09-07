@@ -146,7 +146,7 @@ namespace ConfigUtility.UI
         {
             if (BaldurPropertyManager.ConfigFileExists)
                 return ConfigBackupManager.CreateBackup(null, Overwrite);
-            
+
             return false;
         }
 
@@ -324,9 +324,9 @@ namespace ConfigUtility.UI
 
         private void ConfigWindow_Load(object sender, EventArgs e)
         {
-            if(ApplicationConfiguration.Load(out var config))
+            if (ApplicationConfiguration.Load(out var config))
             {
-                this.Config = config;
+                Config = config;
             }
             else
             {
@@ -334,7 +334,7 @@ namespace ConfigUtility.UI
                 ApplicationConfiguration.Write(Config);
             }
 
-            if (this.Config.BaldurLuaPath is null)
+            if (string.IsNullOrEmpty(Config.BaldurLuaPath))
             {
                 Msg.Information($"The configuration file was not found for {ShortGameName}. Ensure that the game is installed and was started at least once.\n\n" +
                     $"The program will now quit.");
