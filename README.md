@@ -9,6 +9,9 @@ Supports the following games:
 * Icewind Dale Enhanced Edition
 * Planescape Torment Enhanced Edition
 
+![Configuration Tool View](https://github.com/Nesae-avi/IE-EE-Configuration/blob/master/ScreenCapture/View.png?raw=true)
+
 # Compilation
 
-Open solution in Visual Studio 2022 -> Build -> Build Solution or press F6.
+1. Open solution in Visual Studio 2022.
+2. Select Build -> Build Solution or press F6.
