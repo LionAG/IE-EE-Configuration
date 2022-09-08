@@ -133,20 +133,20 @@ namespace ConfigUtility.UI
             { 3, "Game Options,Super Atomic Speed Fighting Action" },
         };
 
-        public ConfigWindow(string ShortGameName, string LongGameName)
+        public ConfigWindow(string shortGameName, string longGameName)
         {
             InitializeComponent();
 
-            this.ShortGameName = ShortGameName;
-            this.LongGameName = LongGameName;
+            ShortGameName = shortGameName;
+            LongGameName = longGameName;
         }
 
         // Methods
 
-        private bool BackupConfiguration(bool Overwrite)
+        private bool BackupConfiguration(bool overwrite)
         {
             if (BaldurPropertyManager.ConfigFileExists)
-                return ConfigBackupManager.CreateBackup(null, Overwrite);
+                return ConfigBackupManager.CreateBackup(null, overwrite);
 
             return false;
         }
@@ -164,8 +164,8 @@ namespace ConfigUtility.UI
                     gameSpeed = Convert.ToInt32(Speed);
                 }
 
-                this.hScrollBar_GameSpeed.Value = gameSpeed;
-                this.label_SpeedValueDisplay.Text = $"{gameSpeed} AI Updates / Sec";
+                hScrollBar_GameSpeed.Value = gameSpeed;
+                label_SpeedValueDisplay.Text = $"{gameSpeed} AI Updates / Sec";
 
                 // Update the blocks
 
@@ -234,10 +234,10 @@ namespace ConfigUtility.UI
             var selectedSpeedValue = ((HScrollBar)sender).Value.ToString();
 
             // Update UI
-            this.label_SpeedValueDisplay.Text = $"{selectedSpeedValue} AI Updates / Sec";
+            label_SpeedValueDisplay.Text = $"{selectedSpeedValue} AI Updates / Sec";
 
             // Update value
-            this.BaldurPropertyManager?.SetProperty("Program Options", "Maximum Frame Rate", selectedSpeedValue);
+            BaldurPropertyManager?.SetProperty("Program Options", "Maximum Frame Rate", selectedSpeedValue);
         }
 
         private void ConfigWindow_Load(object sender, EventArgs e)
@@ -261,8 +261,8 @@ namespace ConfigUtility.UI
             }
             else
             {
-                ConfigBackupManager = new(this.Config.BaldurLuaPath, "Configuration");
-                BaldurPropertyManager = new(this.Config.BaldurLuaPath);
+                ConfigBackupManager = new(Config.BaldurLuaPath, "Configuration");
+                BaldurPropertyManager = new(Config.BaldurLuaPath);
 
                 Text = $"{LongGameName} - Configuration";
 
@@ -307,12 +307,12 @@ namespace ConfigUtility.UI
 
             hScrollBar_GameSpeed.Enabled = true;
 
-            this.UpdateUI();
+            UpdateUI();
         }
 
         private void ConfigWindow_UtilityClosed()
         {
-            this.Close();
+            Close();
         }
 
         private void CheckedListBox_GraphicOptions_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -364,7 +364,7 @@ namespace ConfigUtility.UI
         {
             if (BaldurPropertyManager.ConfigFileExists)
             {
-                this.UpdateUI();
+                UpdateUI();
                 Msg.Information("Option status has been refreshed!");
             }
         }
@@ -379,7 +379,7 @@ namespace ConfigUtility.UI
                 if (BackupConfiguration(true))
                 {
                     Msg.Information($"Backup successfully created!");
-                    this.UpdateUI();
+                    UpdateUI();
                 }
                 else
                 {
@@ -398,7 +398,7 @@ namespace ConfigUtility.UI
                 if (ConfigBackupManager.RestoreBackup())
                 {
                     Msg.Information($"Backup successfully restored!");
-                    this.UpdateUI();
+                    UpdateUI();
                 }
                 else
                 {
@@ -473,7 +473,7 @@ namespace ConfigUtility.UI
                 BaldurPropertyManager.SetBoolean("Game Options,Enhanced Path Search", true);
                 BaldurPropertyManager.SetBoolean("Program Options,Disable Cosmetic Attacks", true);
 
-                this.UpdateUI();
+                UpdateUI();
 
                 Msg.Information("Configuration written!");
             }
@@ -481,7 +481,7 @@ namespace ConfigUtility.UI
 
         private void ExtendedConfigurationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new AdditionalOptions(this.BaldurPropertyManager).ShowDialog();
+            new AdditionalOptions(BaldurPropertyManager).ShowDialog();
         }
 
         private void OpenGitHubToolStripMenuItem_Click(object sender, EventArgs e)
