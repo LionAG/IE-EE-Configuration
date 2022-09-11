@@ -264,7 +264,7 @@ namespace ConfigUtility.UI
                 ConfigBackupManager = new(Config.BaldurLuaPath, "Configuration");
                 BaldurPropertyManager = new(Config.BaldurLuaPath);
 
-                Text = $"{LongGameName} - Configuration";
+                Text = $"{ShortGameName} - Configuration";
 
                 GameFound += ConfigWindow_GameFound;
                 UtilityClosed += ConfigWindow_UtilityClosed;
