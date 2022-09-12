@@ -64,9 +64,10 @@
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openGitHubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog_SelectGameConfig = new System.Windows.Forms.OpenFileDialog();
-            this.openGitHubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openReferenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_GraphicOptions.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -549,32 +550,40 @@
             // checkToolStripMenuItem
             // 
             this.checkToolStripMenuItem.Name = "checkToolStripMenuItem";
-            this.checkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.checkToolStripMenuItem.Text = "Check";
             this.checkToolStripMenuItem.Click += new System.EventHandler(this.CheckToolStripMenuItem_Click);
             // 
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.createToolStripMenuItem.Text = "Create";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.CreateToolStripMenuItem_Click);
             // 
             // restoreToolStripMenuItem
             // 
             this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
-            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.restoreToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.restoreToolStripMenuItem.Text = "Restore";
             this.restoreToolStripMenuItem.Click += new System.EventHandler(this.RestoreToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openReferenceToolStripMenuItem,
             this.openGitHubToolStripMenuItem,
             this.aboutToolStripMenuItem1});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // openGitHubToolStripMenuItem
+            // 
+            this.openGitHubToolStripMenuItem.Name = "openGitHubToolStripMenuItem";
+            this.openGitHubToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openGitHubToolStripMenuItem.Text = "Open GitHub";
+            this.openGitHubToolStripMenuItem.Click += new System.EventHandler(this.OpenGitHubToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem1
             // 
@@ -589,12 +598,12 @@
             this.openFileDialog_SelectGameConfig.FileName = "Baldur.lua";
             this.openFileDialog_SelectGameConfig.Filter = "Lua Files|*.lua";
             // 
-            // openGitHubToolStripMenuItem
+            // openReferenceToolStripMenuItem
             // 
-            this.openGitHubToolStripMenuItem.Name = "openGitHubToolStripMenuItem";
-            this.openGitHubToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.openGitHubToolStripMenuItem.Text = "Open GitHub";
-            this.openGitHubToolStripMenuItem.Click += new System.EventHandler(this.OpenGitHubToolStripMenuItem_Click);
+            this.openReferenceToolStripMenuItem.Name = "openReferenceToolStripMenuItem";
+            this.openReferenceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openReferenceToolStripMenuItem.Text = "Open Reference";
+            this.openReferenceToolStripMenuItem.Click += new System.EventHandler(this.OpenReferenceToolStripMenuItem_Click);
             // 
             // ConfigWindow
             // 
@@ -662,5 +671,6 @@
         private CheckedListBox checkedListBox_ExtendedProgramConfigurationThree;
         private OpenFileDialog openFileDialog_SelectGameConfig;
         private ToolStripMenuItem openGitHubToolStripMenuItem;
+        private ToolStripMenuItem openReferenceToolStripMenuItem;
     }
 }

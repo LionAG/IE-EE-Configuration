@@ -492,5 +492,14 @@ namespace ConfigUtility.UI
                 FileName = "https://github.com/Nesae-avi/IE-EE-Configuration"
             });
         }
+
+        private void OpenReferenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo()
+            {
+                UseShellExecute = true,
+                FileName = "https://nesae-avi.github.io/IE-EE-Configuration/Reference"
+            });
+        }
     }
 }
