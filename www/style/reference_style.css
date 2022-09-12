@@ -1,0 +1,42 @@
+a
+{
+	border: none;
+	color: #eeeeee;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	font-size: 18px;
+	margin: 8px;
+}
+
+a:hover
+{
+	color: red;
+	cursor: pointer;
+	background-color: #111111;
+}
+
+#header
+{
+	font-size: 22px;
+	color: orange;
+	text-align: center;
+	margin-top: 60px;
+	letter-spacing: 1px;
+}
+
+#sub-header
+{
+	font-size: 14px;
+	color: darkorange;
+	text-align: center;
+	margin-top: 12px;
+	margin-bottom: 18px;
+	letter-spacing: 1px;
+}
+
+#content
+{
+	border: 1px dotted white;
+	margin-top: 40px;
+}
