@@ -2,14 +2,16 @@
 
 This is an unofficial configuration utility for Infinity Engine - Enhanced Edition games. Allows to easily change some of the properties changeable through the Baldur.lua file.
 
-Supports the following games:
+This program targets .NET 6. If you get an error saying that runtime is missing you need to download and install [this](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-6.0.8-windows-x64-installer)
+
+![Configuration Tool View](https://github.com/Nesae-avi/IE-EE-Configuration/blob/master/ScreenCapture/View.png?raw=true)
+
+## Games
 
 * Baldur's Gate I Enhanced Edition
 * Baldur's Gate II Enhanced Edition
 * Icewind Dale Enhanced Edition
 * Planescape Torment Enhanced Edition
-
-![Configuration Tool View](https://github.com/Nesae-avi/IE-EE-Configuration/blob/master/ScreenCapture/View.png?raw=true)
 
 # Compilation
 
