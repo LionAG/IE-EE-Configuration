@@ -7,7 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <DebugType>none</DebugType>
     <Version>$(VersionPrefix)</Version>
-    <AssemblyVersion>1.1.1</AssemblyVersion>
+    <AssemblyVersion>1.1.2</AssemblyVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
