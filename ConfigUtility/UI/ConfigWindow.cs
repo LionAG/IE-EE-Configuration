@@ -162,6 +162,11 @@ namespace ConfigUtility.UI
                 if (BaldurPropertyManager.GetProperty("Maximum Frame Rate", out var Speed))
                 {
                     gameSpeed = Convert.ToInt32(Speed);
+
+                    if (gameSpeed > hScrollBar_GameSpeed.Maximum)
+                        gameSpeed = 60;
+                    else if(gameSpeed < hScrollBar_GameSpeed.Minimum)
+                        gameSpeed = 15;
                 }
 
                 hScrollBar_GameSpeed.Value = gameSpeed;
